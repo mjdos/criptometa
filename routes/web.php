@@ -51,3 +51,8 @@ Route::get('/projeto-novidade', function () {
 Route::get('/projeto-explorar', function () {
     return view('site.projeto.explorar');
 })->name('projeto.explorar');
+
+//apoiar o projeto
+Route::get('/projeto-apoiar', function () {
+    return view('site.projeto.apoiar');
+})->name('projeto.apoiar');

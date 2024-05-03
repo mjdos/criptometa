@@ -73,4 +73,5 @@
                 </div>
             </div>
         </div>
-        <!-- main content area -->@include('site.layouts.footer')
+        <!-- main content area -->
+        @include('site.layouts.footer')

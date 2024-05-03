@@ -263,7 +263,7 @@
                             <div class="pricing-plans">
                                 <input type="range" min="0" max="100" value="50" class="purple-slider" id="myRange">
                             </div>
-                            <button class="btn btn-fullwidth  gradient-background" type="submit">Apoiar este projeto!</button>
+                            <a  href="{{route('projeto.apoiar')}}" class="btn btn-fullwidth  gradient-background" type="submit">Apoiar este projeto!</a>
                         </form>
                     </div>
                     
