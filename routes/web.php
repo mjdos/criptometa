@@ -1,26 +1,27 @@
 <?php
 
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
+
+require __DIR__.'/painel.php';
 
 //pagina inicial
 Route::get('/', function () {
     return view('site.home');
 })->name('site.index');
 
+//pagina login
+Route::get('/login', [SiteController::class,'login'])->name('site.login');
+Route::post('/login', [SiteController::class,'logar'])->name('site.logar');
+
 //pagina Campanha
 Route::get('/campanha-tipo', function () {
     return view('site.campanha');
 })->name('site.campanha');
 
-//pagina login
-Route::get('/login', function () {
-    return view('site.login');
-})->name('site.login');
-
 //pagina cadastro
-Route::get('/cadastro', function () {
-    return view('site.cadastro');
-})->name('site.cadastro');
+Route::get('/cadastro', [SiteController::class,'cadastro'])->name('site.cadastro');
+Route::post('/cadastro', [SiteController::class,'cadastroStore'])->name('cadastro.store');
 
 // projeto
 //criar
@@ -56,8 +57,3 @@ Route::get('/projeto-explorar', function () {
 Route::get('/projeto-apoiar', function () {
     return view('site.projeto.apoiar');
 })->name('projeto.apoiar');
-
-//painel do usuario
-Route::get('/usuario-index', function () {
-    return view('site.usuario.index');
-})->name('usuario.index');
