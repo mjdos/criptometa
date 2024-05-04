@@ -56,3 +56,8 @@ Route::get('/projeto-explorar', function () {
 Route::get('/projeto-apoiar', function () {
     return view('site.projeto.apoiar');
 })->name('projeto.apoiar');
+
+//painel do usuario
+Route::get('/usuario-index', function () {
+    return view('site.usuario.index');
+})->name('usuario.index');

@@ -12,7 +12,7 @@
                 <div class="bc-description">Em nossa plataforma de financiamento coletivo, ideias ganham vida com a ajuda da comunidade. Apoie projetos inovadores, causas nobres e artistas talentosos. Juntos, podemos transformar sonhos em realidade. Explore, apoie e faça parte dessa jornada de impacto.
 
                 </div>
-                <div class="bc-button"><a class="btn btn-wide btn-dark" href="{{route('site.campanha')}}">Comece a arrecadar!</a>
+                <div class="bc-button"><a class="btn btn-wide btn-dark" href="{{route('site.login')}}">Comece a arrecadar!</a>
                 </div>
             </div>
             <div class="bc-image"><img src="img/content/creators/become-creator-2.png" alt=""></div>
