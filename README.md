@@ -1,4 +1,5 @@
 
+<p align="center"><img src="https://github.com/mjdos/criptometa/blob/main/public/github/lumx.png" width="800" alt="CriptoMeta"></p>
 
 
 ## 📚 Introdução ao Projeto de Tokenização do Tesouro Nacional
