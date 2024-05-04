@@ -10,20 +10,18 @@ Route::get('/', function () {
     return view('site.home');
 })->name('site.index');
 
+//pagina login
+Route::get('/login', [SiteController::class,'login'])->name('site.login');
+Route::post('/login', [SiteController::class,'logar'])->name('site.logar');
+
 //pagina Campanha
 Route::get('/campanha-tipo', function () {
     return view('site.campanha');
 })->name('site.campanha');
 
-//pagina login
-Route::get('/login', function () {
-    return view('site.login');
-})->name('site.login');
-
 //pagina cadastro
-Route::get('/cadastro', function () {
-    return view('site.cadastro');
-})->name('site.cadastro');
+Route::get('/cadastro', [SiteController::class,'cadastro'])->name('site.cadastro');
+Route::post('/cadastro', [SiteController::class,'cadastroStore'])->name('cadastro.store');
 
 // projeto
 //criar

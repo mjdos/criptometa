@@ -2,62 +2,61 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session ;
 
 class SiteController extends Controller
 {
+    public function login(){
+        return view('site.login');
+    }
+
+    public function logar(Request $request)
+    {
+
+        Session::flush();
+
+        $credentials = [
+            'email' => $request->usuario,
+            'password' => $request->senha
+        ];
+
+        if(Auth::attempt($credentials))
+        {
+
+            $user = Auth::user();
+
+            $usuario_logado = [
+                'id'            => $user->id,
+                'nome'          => $user->nome,
+                'email'          => $user->email,
+                'tipo_id'       => $user->tipo_id,
+            ];
+            
+            Session::put(['usuario' => $usuario_logado]);
+
+            return redirect()->route('site.index');
+
+        }
+
+        return redirect()->back()->withInput()->withErrors(["Usuário ou Senha Incorretos."]);
+    }
+
+    public function cadastro(){
+        return view('site.cadastro');
+    }
     
-    // public function index(){
-    //     return view('index');
-    // }
+    public function cadastroStore(Request $request){
 
-    // public function login(){
-    //     return view('login');
-    // }
+        User::create([
+            'name'      => $request->usuario,
+            'email'     => $request->email,
+            'password'  => $request->senha,
+            'perfil'    => 2,
+        ]);
 
-    // public function store(Request $request){
-
-    //     Session::flush();
-        
-    //     $credentials = [
-    //         'email' => $request->usuario,
-    //         'password' => $request->senha
-    //     ];
-            
-    //     if(Auth::attempt($credentials))
-    //     {
-
-    //         $user = Auth::user();
-
-    //         $usuario_logado = [
-    //             'id'            => $user->id,
-    //             'nome'          => $user->name,
-    //             'email'         => $user->email,
-    //         ];
-            
-    //         Session::put(['usuario' => $usuario_logado]);
-            
-    //         return redirect()->route('home_site.index');
-    //     }
-
-    //     return redirect()->back()->withInput()->withErrors(["Usuário ou Senha Incorretos."]);
-
-    // }
-
-    // public function logout(Request $request){
-    //     Auth::guard('web')->logout();
-
-    //     $request->session()->invalidate();
-
-    //     $request->session()->regenerateToken();
-
-    //     return redirect('/');
-    // }
-
-    // public function home(){
-    //     return view('home');
-    // }
+        return view('site.login');
+    }
 }
