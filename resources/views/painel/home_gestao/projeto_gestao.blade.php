@@ -7,7 +7,7 @@
             <div class="card mb-5 mb-xl-8">
 
                 <div class="card-header border-0 pt-5">
-                    <span class="card-label fw-bolder fs-3 mb-1">Documentos</span>
+                    <span class="card-label fw-bolder fs-3 mb-1">Projetos</span>
                     <div class="p-3">
                         <td class="text-end">
                             <a href="#"  class="btn btn-sm btn-dark">
@@ -31,15 +31,15 @@
 
                             <thead>
                                 <tr class="fw-bolder text-muted bg-secondary">
-                                    <th class="min-w-125px ps-2 rounded-start">Nome</th>
-                                    <th class="min-w-125px">Sigla</th>
-                                    <th class="min-w-125px">Data de Vencimento</th>
-                                    <th class="min-w-125px">Rentabilidade Anual</th>
-                                    <th class="min-w-125px">Valor Nominal</th>
-                                    <th class="min-w-125px">Alíquota IR</th>
+                                    <th class="min-w-125px ps-2 rounded-start">Nome do projeto</th>
+                                    <th class="min-w-125px">Nome do usuário</th>
+                                    <th class="min-w-125px">Metas completadas</th>
+                                    <th class="min-w-125px">Pessoas apoiando</th>
+                                    <th class="min-w-125px rounded-end">Valor obtido</th>
+                                    <!-- <th class="min-w-125px">Alíquota IR</th>
                                     <th class="min-w-125px">Taxa B3</th>
                                     <th class="min-w-125px">Isenção IOF</th>
-                                    <th class="min-w-125px rounded-end"></th>
+                                    <th class="min-w-125px rounded-end"></th> -->
                                 </tr>
                             </thead>
 
@@ -51,17 +51,15 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
+                                        
+                                        <!-- <td>
                                             <div>
                                                 <a href="#" class="btn btn-sm btn-light-warning">
                                                     <i class="fas fa-solid fa-pen"></i>
                                                     Editar
                                                 </a>
                                             </div>
-                                        </td>
+                                        </td> -->
                                     </tr>
                          
 
