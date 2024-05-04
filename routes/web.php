@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
+
+require __DIR__.'/painel.php';
 
 //pagina inicial
 Route::get('/', function () {
@@ -56,3 +59,6 @@ Route::get('/projeto-explorar', function () {
 Route::get('/projeto-apoiar', function () {
     return view('site.projeto.apoiar');
 })->name('projeto.apoiar');
+
+
+
