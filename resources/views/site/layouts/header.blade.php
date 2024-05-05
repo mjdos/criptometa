@@ -80,7 +80,7 @@
                         <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Criar Projeto</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Investir</a></li>
-                        <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Fale Conosco</a></li>
+                        <li class="menu-item"><a class="menu-link" href="{{route('contato')}}">Contato</a></li>
                     </ul>
                     <!--  navigation menu -->
                 </div>
