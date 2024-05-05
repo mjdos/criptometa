@@ -76,7 +76,7 @@
                     <!--  navigation menu -->
                     <ul class="navigation-menu">
                         <li class="menu-item"><a class="menu-link" href="{{route('site.index')}}">Inicial</a></li>
-                        <li class="menu-item menu-item-has-children"><a class="menu-link" href="{{route('projeto.explorar')}}">Quem Somos</a></li>
+                        <li class="menu-item menu-item-has-children"><a class="menu-link" href="{{route('quemsomos')}}">Quem Somos</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Criar Projeto</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Investir</a></li>

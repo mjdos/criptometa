@@ -52,3 +52,9 @@ require __DIR__.'/painel.php';
 
     //Tela Carteira do Usuário
     Route::get('/usuario-carteira', function () {return view('site.usuario.carteira');})->name('usuario.carteira');
+
+
+
+    
+    //Quem Somos
+    Route::get('/quem-somos', function () {return view('site.quem-somos');})->name('quemsomos');
