@@ -41,9 +41,7 @@ require __DIR__.'/painel.php';
     //adicionar novidade
     Route::get('/projeto-novidade', function () {return view('site.projeto.novidade');})->name('projeto.novidade');
 
-    //apoiar o projeto
-    Route::get('/usuario-index/{id?}', function () {return view('site.usuario.index');})->name('usuario.index');
-
+    
     //meus projetos
     Route::get('/meus-projetos-{id}', [SiteController::class, 'meus_projetos'])->name('meus_projetos');
 
@@ -63,7 +61,7 @@ require __DIR__.'/painel.php';
     Route::get('/usuario-meus-projeto/{id}/editar',[SiteController::class, 'editarProjetos'])->name('usuario.projetosEditar');
 
     //apoiar o projeto
-    Route::get('/projeto-apoiar-{id}', [SiteController::class, 'apoiarProjeto'])->name('projeto.apoiar');
+    // Route::get('/projeto-apoiar-{id}', [SiteController::class, 'apoiarProjeto'])->name('projeto.apoiar');
     //Quem Somos
     Route::get('/quem-somos', function () {return view('site.quem-somos');})->name('quemsomos');
     Route::get('/contato', function () {return view('site.contato');})->name('contato');

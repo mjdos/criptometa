@@ -19,7 +19,7 @@
                                         </svg><span class="count">Apoie esse projeto!</span></div></a>
                                     <div class="featured-item-image">
                                         <a href="{{ route('projeto.index', $projeto->id) }}">
-                                            <img src="{{$projeto->imagem}}" alt=""></a>
+                                            <img src="img/proj_{{$projeto->id}}.jpg" alt=""></a>
                                     </div>
                                     <div class="featured-item-info">
                                         <div class="title"><a href="{{ route('projeto.index', $projeto->id) }}">{{$projeto->nome}}</a>
