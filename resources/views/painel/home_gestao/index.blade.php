@@ -32,7 +32,7 @@
 						</div>
 						<div class="card-body d-flex flex-column">
 							<div class="pt-0" align="center">
-								<img src="{{ url('assets/img/titulo.png') }}" class="h-70px mb-2">
+								<img src="{{ url('assets/img/users.png') }}" class="h-70px mb-2">
 								<br>
 								<a href="{{ route('usuario_gestao.index')}}" class="btn btn-primary w-80 py-3">Acessar</a>
 							</div>
@@ -48,7 +48,7 @@
 						</div>
 						<div class="card-body d-flex flex-column">
 							<div class="pt-0" align="center">
-								<img src="{{ url('assets/img/titulo.png') }}" class="h-70px mb-2">
+								<img src="{{ url('assets/img/tra.png') }}" class="h-70px mb-2">
 								<br>
 								<a href="{{ route('auditoria_gestao.index')}}" class="btn btn-primary w-80 py-3">Acessar</a>
 							</div>
