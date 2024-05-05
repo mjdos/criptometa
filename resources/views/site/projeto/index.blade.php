@@ -6,11 +6,16 @@
                 <div class="product-title-section">
                     <h2>NOME DO PROJETO</h2>
                     <div class="product-subtitle">
-                        <div class="product-author"><span class="avatar box-26"><a href="06-profile-page.html"><img
-                                        src="img/avatar.png" alt=""></a><span class="verified"><svg
-                                        class="crumina-icon">
+                        <div class="product-author">
+                            <span class="avatar box-26">
+                                <a href="06-profile-page.html"><img src="img/avatar.png" alt=""></a>
+                                <span class="verified">
+                                    <svg class="crumina-icon">
                                         <use xlink:href="#check-icon"></use>
-                                    </svg></span></span>@USUÁRIO QUE CRIOU O PROJETO</div>
+                                    </svg>
+                                </span>
+                            </span>@USUÁRIO QUE CRIOU O PROJETO
+                        </div>
                         <div class="item-category social-graphics">
                             TIPO DO PROJETO
                         </div>

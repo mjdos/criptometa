@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('projetos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('autor_id')->unsigned();
+            $table->foreign('autor_id')
+                ->references('id')
+                ->on('users');
             $table->string('nome');
             $table->longText('descricao');
             $table->string('meta_1');

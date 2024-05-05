@@ -76,13 +76,13 @@ class SiteController extends Controller
     public function projetoStore(Request $request){
         
         if($request->file('imagem')->isValid()) {
-            $path = $request->file('imagem')->store('public/imagemProjetos');
+            $path = $request->file('imagem')->store('storage/imagemProjetos');
             $imagem_1 =  $path;
-            
         }
-
+        $usuario = Session::get('usuario');
         Projetos::create([
             'nome'      => $request->nome,
+            'autor_id'  => $usuario['id'],
             'descricao' => $request->descricao,
             'meta_1'    => $request->meta_1,
             'meta_2'    => $request->meta_2,
@@ -92,6 +92,13 @@ class SiteController extends Controller
             'imagem'    => $imagem_1,
         ]);
 
-        return view('site.projeto.explorar');
+        return redirect()->route('projeto.explorar');
+    }
+
+    public function projetos(){
+        
+        $projetos = Projetos::all();
+
+        return view('site.projeto.explorar', compact('projetos'));
     }
 }

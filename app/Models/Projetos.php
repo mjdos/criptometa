@@ -13,6 +13,7 @@ class Projetos extends Model
 
     protected $fillable = [
         'nome',
+        'autor_id',
         'descricao',
         'meta_1',
         'meta_2',
