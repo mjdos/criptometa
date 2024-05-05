@@ -36,8 +36,11 @@ class SiteController extends Controller
             $usuario_logado = [
                 'id'            => $user->id,
                 'nome'          => $user->name,
-                'email'          => $user->email,
-                'tipo_id'       => $user->tipo_id,
+                'email'         => $user->email,
+                'perfil'        => $user->perfil,
+                'carteira'      => $user->carteira,
+                'carteira_id'   => $user->carteira_id,
+                'projeto_id'    => $user->projeto_id
             ];
             
             Session::put(['usuario' => $usuario_logado]);
@@ -55,11 +58,18 @@ class SiteController extends Controller
     
     public function cadastroStore(Request $request){
 
+        $lumx = new ApiLumxController;
+        $nova_carteira = $lumx->criarCarteira();
+
         User::create([
-            'name'      => $request->usuario,
-            'email'     => $request->email,
-            'password'  => $request->senha,
-            'perfil'    => 2,
+            'name'          => $request->usuario,
+            'perfil'        => 2,
+            'carteira'      => $nova_carteira['address'],
+            'carteira_id'    => $nova_carteira['id'],
+            'projeto_id'    => $nova_carteira['projectId'],
+            'email'         => $request->email,
+            'password'      => $request->senha,
+            
         ]);
 
         return view('site.login');

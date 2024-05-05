@@ -3,6 +3,7 @@
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
+require __DIR__.'/lumx.php';
 require __DIR__.'/painel.php';
 
     //pagina inicial
@@ -42,5 +43,11 @@ require __DIR__.'/painel.php';
     //apoiar o projeto
     Route::get('/projeto-apoiar', function () {return view('site.projeto.apoiar');})->name('projeto.apoiar');
 
-    //apoiar o projeto
+
+
+    ///// TELAS DO USUÁRIO
+    //Tela Perfil do Usuário
     Route::get('/usuario-index', function () {return view('site.usuario.index');})->name('usuario.index');
+
+    //Tela Carteira do Usuário
+    Route::get('/usuario-carteira', function () {return view('site.usuario.carteira');})->name('usuario.carteira');
