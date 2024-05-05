@@ -8,7 +8,7 @@
         <form action="{{ route('cadastro.store')}}" method="post" class="tk-lp-form user-register-kit-register tk-lp-tabs-form-content active" >
             @csrf
             <div class="tk-lp-form-item">
-                <label class="tk-lp-label">Usuário</label>
+                <label class="tk-lp-label">Nome Completo</label>
                 <input class="tk-lp-input"  name="usuario" type="text"></div>
             <div class="tk-lp-form-item">
                 <label for="sign_up_email-address" class="tk-lp-label">Email</label>
