@@ -13,9 +13,9 @@
     <meta property="og:image" content="">
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('img/favicon02.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url('img/favicon02.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/favicon02.png') }}">
 
     
     <link rel="stylesheet" href="css/normalize.css">
@@ -212,8 +212,8 @@
                     <!-- mobile panel burger icon -->
                     <!-- header logo -->
                     <div class="logo">
-                        <a class="logo-link" href="{{route('site.index')}}">
-                            <div class="logo-img"><img src="svg/logo-ds.svg" alt="logo"></div>
+                        <a class="logo-link" href="{{ route('site.index') }}">
+                            <div class="logo-img"><img src="{{ url('img/logo.png') }}" alt="logo"></div>
                             <div class="logo-text">CriptoMeta</div>
                         </a>
                     </div>
