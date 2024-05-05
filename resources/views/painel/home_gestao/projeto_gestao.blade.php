@@ -38,7 +38,7 @@
                                     <td>{{ $projeto->carteira }}</td>
                                     <td>{{ $projeto->created_at }}</td>
                                     <td style="padding-left: 30px;">
-                                        <a href="{{  route('meus_projetos', $usuario['id'])}}"  class="btn btn-sm btn-info">
+                                        <a   class="btn btn-sm btn-info">
                                             <i class="bi bi-info-circle" style="padding-left: 2px;"></i>
                                         </a>
                                     </td>
