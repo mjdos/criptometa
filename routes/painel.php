@@ -20,7 +20,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/gestao_logout', [LoginController::class, 'logout'])->name('gestao_logout');
 
     Route::get('/projeto_gestao', [PainelController::class, 'projeto_gestao'])->name('projeto_gestao.index');
-
+    // Route::get('/usuario_gestao', [PainelController::class, 'usuario_gestao'])->name('usuario_gestao.index');
+    Route::get('/usuario_gestao', [PainelController::class, 'usuario_gestao'])->name('usuario_gestao.index');
+    Route::get('/auditoria_gestao', [PainelController::class, 'auditoria_gestao'])->name('auditoria_gestao.index');
 
 
 

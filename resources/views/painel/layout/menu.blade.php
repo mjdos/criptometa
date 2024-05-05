@@ -19,11 +19,29 @@
 				<div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold" id="#kt_aside_menu" data-kt-menu="true">
 					
 					<div class="menu-item py-0">
-						<a class="menu-link active menu-center" href="{{route('home.index')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+						<a class="menu-link menu-center" href="{{route('home.index')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 							<span class="menu-icon me-0">
 								<i class="bi bi-house fs-2"></i>
 							</span>
 							<span class="menu-title">Home</span>
+						</a>
+					</div>
+
+					<div class="menu-item py-0">
+						<a class="menu-link menu-center" href="{{route('usuario_gestao.index')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+							<span class="menu-icon me-0">
+								<i class="bi bi-person-circle fs-2"></i>
+							</span>
+							<span class="menu-title">Usuários</span>
+						</a>
+					</div>
+
+					<div class="menu-item py-0">
+						<a class="menu-link menu-center" href="{{route('auditoria_gestao.index')}}" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+							<span class="menu-icon me-0">
+								<i class="bi bi-clipboard-check fs-2"></i>
+							</span>
+							<span class="menu-title">Auditoria</span>
 						</a>
 					</div>
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Projetos;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -20,10 +22,25 @@ class PainelController extends Controller
     }
 
     public function projeto_gestao()
-    {
-        return view('painel.home_gestao.projeto_gestao');
+    {   
+        $projetos = Projetos::all();
+        return view('painel.home_gestao.projeto_gestao', compact('projetos'));
     }
 
+    public function usuario_gestao()
+    {
+        $users = User::all();
+
+        return view('painel.home_gestao.usuario_gestao', compact('users'));
+    
+    }
+
+    public function auditoria_gestao()
+    {
+
+        return view('painel.home_gestao.auditoria_gestao');
+    
+    }
 
 
 }

@@ -91,7 +91,7 @@ class SiteController extends Controller
             'meta_5'    => $request->meta_5,
             'imagem'    => $imagem_1,
         ]);
-
+        
         return view('site.projeto.explorar');
     }
 }

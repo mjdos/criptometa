@@ -3,18 +3,10 @@
 <div class="content d-flex flex-column flex-column-fluid" style="padding: 10px !important" id="kt_content">
     <div id="kt_content_container" class="container-xxl">
         <div class="g-5 gx-xxl-8">
-
             <div class="card mb-5 mb-xl-8">
-
                 <div class="card-header border-0 pt-5">
                     <span class="card-label fw-bolder fs-3 mb-1">Projetos</span>
                     <div class="p-3">
-                        <td class="text-end">
-                            <a href="#"  class="btn btn-sm btn-dark">
-                            <i class="bi bi-plus-lg"></i>
-                                Novo Título
-                            </a>
-                        </td>
                         <td class="text-end">
                             <a href="{{route('home.index')}}"  class="btn btn-sm btn-primary">
                             <i class="bi bi-backspace-fill"></i>
@@ -26,44 +18,45 @@
 
                 <div class="card-body py-3">
                     <div class="table-responsive">
-
                         <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-2" style="font-size: 13px;">
-
                             <thead>
                                 <tr class="fw-bolder text-muted bg-secondary">
                                     <th class="min-w-125px ps-2 rounded-start">Nome do projeto</th>
-                                    <th class="min-w-125px">Nome do usuário</th>
-                                    <th class="min-w-125px">Metas completadas</th>
-                                    <th class="min-w-125px">Pessoas apoiando</th>
-                                    <th class="min-w-125px rounded-end">Valor obtido</th>
-                                    <!-- <th class="min-w-125px">Alíquota IR</th>
-                                    <th class="min-w-125px">Taxa B3</th>
-                                    <th class="min-w-125px">Isenção IOF</th>
-                                    <th class="min-w-125px rounded-end"></th> -->
+                                    <th class="min-w-125px">Descrição</th>
+                                    <th class="min-w-125px">1ª meta</th>
+                                    <th class="min-w-125px">2ª meta</th>
+                                    <th class="min-w-125px">3ª meta</th>
+                                    <th class="min-w-125px">4ª meta</th>
+                                    <th class="min-w-125px">5ª meta</th>
+                                    <th class="min-w-125px">imagem</th>
+                                    <th class="min-w-125px">Carteira</th>
+                                    <th class="min-w-125px rounded-end">Data de registro</th>
+                                    <th class="min-w-125px rounded-end">Visualizar projeto</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                               
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        
-                                        <!-- <td>
-                                            <div>
-                                                <a href="#" class="btn btn-sm btn-light-warning">
-                                                    <i class="fas fa-solid fa-pen"></i>
-                                                    Editar
-                                                </a>
-                                            </div>
-                                        </td> -->
-                                    </tr>
-                         
-
-
+                            <tbody>
+                                @foreach ($projetos as $projeto)
+                                <tr>
+                                    <td style="padding-left: 10px;">{{ $projeto->nome }}</td>
+                                    <td style="padding-left: 15px;">{{ $projeto->descricao }}</td>
+                                    <td>{{ $projeto->meta_1 }}</td>
+                                    <td>{{ $projeto->meta_2 }}</td>
+                                    <td>{{ $projeto->meta_3 }}</td>
+                                    <td>{{ $projeto->meta_4 }}</td>
+                                    <td>{{ $projeto->meta_5 }}</td>
+                                    <td>{{ $projeto->imagem }}</td>
+                                    <td>{{ $projeto->carteira }}</td>
+                                    <td>{{ $projeto->created_at }}</td>
+                                    <td style="padding-left: 30px;">
+                                        <a href="{{route('projeto.index')}}"  class="btn btn-sm btn-info">
+                                            <i class="bi bi-info-circle" style="padding-left: 2px;"></i>
+                                        </a>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
