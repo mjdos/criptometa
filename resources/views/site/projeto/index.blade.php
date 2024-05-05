@@ -8,18 +8,12 @@
                     <div class="product-subtitle">
                         <div class="product-author">
                             <span class="avatar box-26">
-                                <a href="06-profile-page.html"><img src="img/avatar.png" alt=""></a>
-                                <span class="verified">
-                                    <svg class="crumina-icon">
-                                        <use xlink:href="#check-icon"></use>
-                                    </svg>
-                                </span>
                             </span>{{$projeto->first()->autor->name}}
                         </div>
                     </div>
                 </div>
                 <div class="product-image">
-                    <img src="{{url($projeto->imagem)}}" alt="Product Image">
+                    <img src="{{url($projeto->imagem)}}" style="height: 700px;" alt="Product Image">
                 </div>
                 <div class="product-info">
                     <div class="tabs-block swiper-container">
@@ -36,11 +30,18 @@
                             </div>
                         </div>
                         <ul class="tabs-list swiper-wrapper">
-                            <li class="swiper-slide active"><a href="#tab1">Descrição</a></li>
-                            <li class="swiper-slide"><a href="#tab2">Metas Extras <span class="count">2</span></a></li>
-                            <li class="swiper-slide"><a href="#tab3">Novidades <span class="count">2</span></a></li>
-                            <li class="swiper-slide"><a href="#tab4">Reconpensas <span class="count">1</span></a></li>
-                            <li class="swiper-slide"><a href="#tab5">Apoiadores <span class="count">1</span></a></li>
+                            <li class="swiper-slide active">
+                                <a href="#tab1">Descrição</a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#tab2">Metas<span class="count">5</span></a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#tab3">Recompensas<span class="count"></span></a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#tab5">Apoiadores<span class="count">{{ count($apoiadores)}}</span></a>
+                            </li>
                         </ul>
                         <div class="tabs-content-wrapper">
                             <div id="tab1" class="tab active">
@@ -76,110 +77,68 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="tab2" class="tab">
-                                <div class="tab-content">
-                                    <ul class="comments-list">
-                                        <li class="comment-item has-children">
-                                            <div class="comment-item-wrapper">
-                                                <div class="avatar-block">
-                                                    <div class="avatar box-42">
-                                                        <a href="06-profile-page.html">
-                                                            <img src="img/avatar.png" alt="avatar"><span
-                                                                class="verified"><svg class="crumina-icon">
-                                                                    <use xlink:href="#check-icon"></use>
-                                                                </svg></span></a>
-                                                    </div>
-                                                    <div class="avatar-meta">
-                                                        <div class="avatar-title"><a href="06-profile-page.html">Dexter
-                                                                Stark</a></div>
-                                                        <div class="avatar-meta">@dexterstark</div>
-                                                    </div>
-                                                </div>
-                                                <div class="comment-body">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                    eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                    veniam,
-                                                    quis nostrud exercitation ullamco...
-                                                </div>
-                                                <div class="comment-meta">
-                                                    <div class="publish-date">2 hours ago</div>
-                                                    <div class="reply"><a href="#">Reply</a></div>
-                                                </div>
-                                            </div>
-                                            <ul class="children">
-                                                <li class="comment-item">
-                                                    <div class="comment-item-wrapper">
-                                                        <div class="avatar-block">
-                                                            <div class="avatar box-42">
-                                                                <a href="06-profile-page.html">
-                                                                    <img src="img/avatar-2.png" alt="avatar"><span
-                                                                        class="verified"><svg class="crumina-icon">
-                                                                            <use xlink:href="#check-icon"></use>
-                                                                        </svg></span></a>
-                                                            </div>
-                                                            <div class="avatar-meta">
-                                                                <div class="avatar-title"><a
-                                                                        href="06-profile-page.html">Jackie
-                                                                        Jones</a></div>
-                                                                <div class="avatar-meta">@JackieJ</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="comment-body">
-                                                            Sed ut perspiciatis unde omnis iste natus error sit
-                                                            voluptatem
-                                                            accusantium doloremque.
-                                                        </div>
-                                                        <div class="comment-meta">
-                                                            <div class="publish-date">46 minutes ago</div>
-                                                            <div class="reply"><a href="#">Reply</a></div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                             <div id="tab3" class="tab">
                                 <div class="tab-content">
-                                    <ul class="reviews-list">
-                                        <li class="review-item">
-                                            <div class="review-header">
-                                                <div class="review-title">This is an incredible template!!!!!!!</div>
-                                                <div class="item-rating">
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class=""><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                </div>
-                                            </div>
-                                            <div class="review-body">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                Ut
-                                                enim ad minim veniam, quis nostrud exercitation ullamco...</div>
-                                            <div class="review-footer">
-                                                <div class="review-author"><span class="avatar box-26"><a
-                                                            href="06-profile-page.html"><img src="img/avatar-2.png"
-                                                                alt=""></a><span class="verified"><svg
-                                                                class="crumina-icon">
-                                                                <use xlink:href="#check-icon"></use>
-                                                            </svg></span></span>@JackieJ</div>
-                                                <div class="publish-date">2 hours ago</div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <div class="product-description">
+                                        <div class="title h6">O valor da sua doação também te recompensa!</div>
+                                        <ul class="list-line-height">
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$10 - Agradecimento pessoal em vídeo pelo apoio ao projeto.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$20 - Acesso antecipado à versão beta do produto ou software.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$20 - Acesso antecipado à versão beta do produto ou software.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$50 - Nome nos agradecimentos na página do projeto e acesso antecipado à versão beta.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$100 - Camiseta exclusiva do projeto com design inovador.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$200 - Convite para webinar exclusivo com o criador do projeto para discussão de ideias e feedback.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$500 - Pacote premium que inclui todos os itens anteriores mais um produto inicial quando lançado.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$1,000 - Nome como patrocinador no site do projeto e todos os benefícios anteriores.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$5,000 - Visita exclusiva ao laboratório ou espaço de trabalho do projeto com a oportunidade de conhecer a equipe.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$10,000 - Participação em um jantar exclusivo com o criador do projeto e outros investidores de alto nível.
+                                            </li>
+                                            <li>
+                                                <svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>R$100,000 - Tornar-se sócio do projeto, com direito a 10% de participação na empresa (limitado a 4 investidores).
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -188,18 +147,14 @@
             </div>
             <aside>
                 <div class="product-additional-info">
-                    {{-- total de apoiadores --}}
-                    <div class="product-fav-counter"><svg class="crumina-icon">
-                            <use xlink:href="#heart-icon"></use>
-                        </svg><span class="count">105</span>
-                    </div>
+                    
                     <div class="product-purchase-info">
                         <form class="cryptoki-form" id="purchase-form">
                             <div class="product-price">
-                                <div class="price">$ {{$projeto->valor}} </div>
+                                <div class="price">R${{$projeto->valor}} </div>
                                 <div class="label">Valor da Meta</div>
                             </div>
-                            <a  href="{{route('projeto.apoiar')}}" class="btn btn-fullwidth  gradient-background" type="submit">Apoiar este projeto!</a>
+                            <a  href="{{route('projeto.apoiar', $projeto->id)}}" class="btn btn-fullwidth  gradient-background" type="submit">Apoiar este projeto!</a>
                         </form>
                     </div>
                     

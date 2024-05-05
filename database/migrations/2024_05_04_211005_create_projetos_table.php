@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('projetos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('autor_id')->unsigned(); // Usando unsignedBigInteger para a chave estrangeira
+            $table->integer('autor_id')->unsigned();
             $table->foreign('autor_id')
                 ->references('id')
                 ->on('users');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Investimentos;
 use App\Models\Projetos;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -81,8 +82,9 @@ class SiteController extends Controller
     {
 
         $projeto = Projetos::find($id);
+        $apoiadores = Investimentos::where('projeto_id', $id)->get();
 
-        return view('site.projeto.index', compact('projeto'));
+        return view('site.projeto.index', compact('projeto', 'apoiadores'));
     }
 
     public function projetoCriar()
@@ -122,6 +124,23 @@ class SiteController extends Controller
         return view('site.projeto.explorar', compact('projetos'));
     }
 
+    public function apoiar($id){
+        $projeto = Projetos::find($id);
+        return view('site.projeto.apoiar', compact('projeto'));
+    }
+
+    public function investir(Request $request, $id){
+        
+        $usuario = Session::get('usuario');
+        Investimentos::create([
+            'investidor_id'     => $usuario['id'],
+            'projeto_id'        => $id,
+            'valor'             => $request->valor,
+        ]);
+
+        return redirect()->route('projeto.explorar');
+    }
+
     public function meus_projetos($id){
         
         $projetos = Projetos::where('autor_id', $id)->get();
@@ -132,18 +151,24 @@ class SiteController extends Controller
     public function showProjetos(Request $request)
     {
 
-        $user = $request->user(); // Obtém o usuário autenticado
+        $user = $request->user(); 
 
         $projetos = Projetos::where('autor_id', $user->id)->get();
 
         return view('site.usuario.projeto', compact('projetos'));
     }
 
-    function editarProjetos($di)
+    function editarProjetos($id)
     {
-
-        return view('site.projeto.editar', compact('projetos'));
+        $projeto = Projetos::find($id);
+        return view('site.projeto.editar');
     }
+    function apoiarProjeto(Request $request)
+    {
+        $id = $request->id;
+        return view('site.projeto.apoiar');
+    }
+    
 
     public function projeto_usuario($id)
     {

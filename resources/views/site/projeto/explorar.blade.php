@@ -14,15 +14,15 @@
                         <div class="featured-item v5">
                             <div class="featured-item-wrapper">
                                 <div class="featured-item-content">
-                                    <div class="fav-counter"><svg class="crumina-icon">
-                                            <use xlink:href="#heart-icon"></use>
-                                        </svg><span class="count">Apoie esse projeto!</span></div>
+                                    <a href="{{route('projeto.apoiar', $projeto->id)}}"> <div class="fav-counter"><svg class="crumina-icon">
+                                          
+                                        </svg><span class="count">Apoie esse projeto!</span></div></a>
                                     <div class="featured-item-image">
-                                        <a href="05-product.html">
+                                        <a href="{{ route('projeto.index', $projeto->id) }}">
                                             <img src="{{$projeto->imagem}}" alt=""></a>
                                     </div>
                                     <div class="featured-item-info">
-                                        <div class="title"><a href="05-product.html">{{$projeto->nome}}</a>
+                                        <div class="title"><a href="{{ route('projeto.index', $projeto->id) }}">{{$projeto->nome}}</a>
                                         </div>
                                         <div class="item-meta"><span class="avatar box-26"><a
                                                     href="/cryptoki-html/"><img src="img/avatar.png" alt=""></a><span
