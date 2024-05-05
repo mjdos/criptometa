@@ -170,5 +170,13 @@ class SiteController extends Controller
     }
     
 
+    public function projeto_usuario($id)
+    {
+        $projetos = Projetos::where('autor_id', $id)->get();
+        
+
+        return view('site.projeto.projeto_usuario', compact('projetos'));
+    }
+
 
 }
