@@ -28,6 +28,9 @@
     <meta name="theme-color" content="#fafafa">
 
 <body class="loading">
+    @php
+        $usuario = Session::get('usuario');
+    @endphp
     <div class="main digital-store">
         <!-- mobile navigation panel -->
         <div class="mobile-nav-panel">
@@ -359,8 +362,9 @@
                     <!-- header user profile -->
                     <div class="header-user-profile cryptoki-notif-bttn" data-target="profile-dropdown">
                         <div class="user-meta">
-                            <div class="user_name">Joâo Neves</div>
-                            <div class="user_score">ETH $291.36</div>
+
+                            <div class="user_name">{{$usuario['nome']}}</div>
+                            <!-- <div class="user_score">ETH $291.36</div> -->
                         </div>
                         <div class="avatar box-42">
                             <img src="img/avatar.png" alt="avatar"><span class="verified"><svg class="crumina-icon">

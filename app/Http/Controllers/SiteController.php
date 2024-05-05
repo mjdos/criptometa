@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Session ;
 
 class SiteController extends Controller
 {
+    public function index(){
+        return view('site.home');
+    }
+
     public function login(){
         return view('site.login');
     }
@@ -30,7 +34,7 @@ class SiteController extends Controller
 
             $usuario_logado = [
                 'id'            => $user->id,
-                'nome'          => $user->nome,
+                'nome'          => $user->name,
                 'email'          => $user->email,
                 'tipo_id'       => $user->tipo_id,
             ];

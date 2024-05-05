@@ -5,7 +5,7 @@
         <div class="page-title text-center">
             <h2><span class="gradient-text">Registrar</span> Conta</h2>
         </div>
-        <form action="" method="" class="tk-lp-form user-register-kit-register tk-lp-tabs-form-content active" >
+        <form action="{{ route('cadastro.store')}}" method="post" class="tk-lp-form user-register-kit-register tk-lp-tabs-form-content active" >
             @csrf
             <div class="tk-lp-form-item">
                 <label class="tk-lp-label">Usuário</label>
