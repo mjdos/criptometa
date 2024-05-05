@@ -25,6 +25,9 @@ require __DIR__.'/painel.php';
     Route::get('/projeto-criar', [SiteController::class, 'projetoCriar'])->name('projeto.criar');
     Route::post('/projeto-criar', [SiteController::class, 'projetoStore'])->name('projeto.store');
 
+    //adicionar explorar
+    Route::get('/projeto-explorar', [SiteController::class, 'projetos'])->name('projeto.explorar');
+
 
 
     //adicionar meta 
@@ -35,8 +38,6 @@ require __DIR__.'/painel.php';
     //adicionar novidade
     Route::get('/projeto-novidade', function () {return view('site.projeto.novidade');})->name('projeto.novidade');
 
-    //adicionar explorar
-    Route::get('/projeto-explorar', function () {return view('site.projeto.explorar');})->name('projeto.explorar');
 
     //apoiar o projeto
     Route::get('/projeto-apoiar', function () {return view('site.projeto.apoiar');})->name('projeto.apoiar');
