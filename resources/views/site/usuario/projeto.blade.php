@@ -38,7 +38,7 @@ $usuario = Session::get('usuario');
                         <div class="featured-item-wrapper">
                             <div class="featured-item-content">
                                 <div class="featured-item-image">
-                                    <a href="05-product.html">
+                                    <a href="{{ route('projeto.index', $projeto->id) }}">
                                         <img src="@if(isset($projeto->imagem))
                                         {{$projeto->imagem }}" alt=""></a>
                                         @else
@@ -48,7 +48,7 @@ $usuario = Session::get('usuario');
                                 <div class="featured-item-info">
                                     
                                     <div class="title">
-                                        <a href="05-product.html">{{$projeto->nome}}</a>
+                                        <a href="{{ route('projeto.index', $projeto->id) }}">{{$projeto->nome}}</a>
                                     </div>
                                     <div class="item-meta"><span class="avatar box-26"><a href="/cryptoki-html/"><img src="img/avatar.png" alt=""></a><span class="verified">
                                                 </span></span>{{$projeto->autor->name}}</div>

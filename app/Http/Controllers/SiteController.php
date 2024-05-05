@@ -125,16 +125,22 @@ class SiteController extends Controller
     public function showProjetos(Request $request)
     {
 
-        $user = $request->user(); // Obtém o usuário autenticado
+        $user = $request->user(); 
 
         $projetos = Projetos::where('autor_id', $user->id)->get();
 
         return view('site.usuario.projeto', compact('projetos'));
     }
 
-    function editarProjetos($di)
+    function editarProjetos($id)
     {
-
-        return view('site.projeto.editar', compact('projetos'));
+        $projeto = Projetos::find($id);
+        return view('site.projeto.editar');
     }
+    function apoiarProjeto(Request $request)
+    {
+        $id = $request->id;
+        return view('site.projeto.apoiar');
+    }
+    
 }
