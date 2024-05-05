@@ -1,56 +1,42 @@
 @include('site.layouts.header')
 <div class="container">
-    <!-- main content area -->
+    <br><br>
     <div>
-        <div class="become-creator-bc-box container-1300 section-padding-medium">
-            <div class="bc-info">
-                <div class="bc-heading">
-                    <div class="bc-heading-subtitle">Participe da Cripotometa!</div>
-                    <div class="bc-heading-title">Seja um <span class="gradient-text">Apoiador</span>
+        <div class="become-creator-bc-box container-1300">
+            <div class="bc-info" style="padding:0px !important">
+                <div class="bc-heading" style="margin-bottom:10px !important">
+                    <div class="bc-heading-subtitle">Começe agora mesmo</div>
+                    <div class="bc-heading-title">Crie o seu <span class="gradient-text">Projeto</span>
                     </div>
                 </div>
-                <div class="bc-description">Em nossa plataforma de financiamento coletivo, ideias ganham vida com a ajuda da comunidade. Apoie projetos inovadores, causas nobres e artistas talentosos. Juntos, podemos transformar sonhos em realidade. Explore, apoie e faça parte dessa jornada de impacto.
-
+                <div class="bc-description">
+                    Você tem uma ideia inovadora que pode revolucionar o setor de tecnologia? No Criptometa, oferecemos a plataforma perfeita para transformar suas ideias brilhantes em projetos de sucesso. Ao estabelecer metas claras e demonstrar o progresso através de entregas concretas, você não só capta recursos, mas também constrói confiança e visibilidade. Junte-se a uma comunidade de visionários e aproveite uma plataforma de crowdfunding que realmente compreende e apoia as necessidades dos empreendedores de tecnologia. Dê o primeiro passo para fazer história no mundo tecnológico — cadastre seu projeto hoje!
                 </div>
                 <div class="bc-button"><a class="btn btn-wide btn-dark" href="{{route('site.login')}}">Comece a arrecadar!</a>
                 </div>
             </div>
-            <div class="bc-image"><img src="img/content/creators/become-creator-2.png" alt=""></div>
-        </div>
-        <div class="container-1300 section-padding-medium">
-            <div class="info-box">
-                <div class="info-item">
-                    <div class="title h6">Ideal para todas as fases e necessidades do seu Fazer</div>
-                    <div class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim . </div>
+            <div class="bc-image"><img src="img/home.png" alt=""></div>
+        </div><br>
+        <hr size="1"><br>
+        <div class="become-creator-bc-box container-1300">
+            <div class="bc-image"><img src="img/home2.png" alt=""></div>
+            <div class="bc-info" style="padding:0px !important">
+                <div class="bc-heading" style="margin-bottom:10px !important">
+                    <div class="bc-heading-subtitle">Ajude o sonho nascer</div>
+                    <div class="bc-heading-title">Invista em <span class="gradient-text">Projetos</span>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <div class="title h6">Maior engajamento com a sua rede</div>
-                    <div class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim . </div>
+                <div class="bc-description">
+                Descubra o poder do seu investimento no Criptometa, onde cada contribuição impulsiona o avanço tecnológico e transforma ideias promissoras em soluções tangíveis. Como investidor, você não apenas financia inovações, mas também acompanha cada etapa do progresso, garantindo que seu apoio esteja verdadeiramente fazendo a diferença. Ao investir em projetos com metas definidas e entrega comprovada, você contribui para um futuro mais inovador e tem a oportunidade de fazer parte do sucesso de startups que moldarão o mundo de amanhã. Participe agora e seja um agente de mudança no ecossistema tecnológico e ajude a criar novas startups.
                 </div>
-                <div class="info-item">
-                    <div class="title h6">Biblioteca de conteúdos</div>
-                    <div class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim . </div>
-                </div>
-                <div class="info-item">
-                    <div class="title h6">Especialistas no Financiamento</div>
-                    <div class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim . </div>
-                </div>
-                <div class="info-item">
-                    <div class="title h6">A única plataforma com apoios a Criptomoedas</div>
-                    <div class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim . </div>
-                </div>
-                <div class="info-item">
-                    <div class="title h6">Suporte aos Apoiadores!</div>
-                    <div class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim . </div>
+                <div class="bc-button"><a class="btn btn-wide btn-dark" href="{{route('projeto.explorar')}}">Comece a Investir</a>
                 </div>
             </div>
+            
         </div>
+
+
+
     </div>
     <!-- main content area -->
 </div>
