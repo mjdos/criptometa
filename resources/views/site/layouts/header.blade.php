@@ -85,28 +85,19 @@
                     <!--  navigation menu -->
                 </div>
                 <div class="nav-right-hand-part">
-                    <!-- user activity buttons -->
-                    <div class="user-activity-buttons">
-                        <!-- user mobile search button -->
-                        <button id="mobile-search">
-                            <svg class="crumina-icon open-button">
-                                <use id="search" xlink:href="#search-icon"></use>
-                            </svg>
-                        </button>
-                        <!-- user mobile search button -->
-                    </div>
+
                     <!-- user activity buttons -->
                     <!-- header user profile -->
+                    @if(isset($usuario))
                     <div class="header-user-profile cryptoki-notif-bttn" data-target="profile-dropdown">
+
                         <div class="user-meta">
 
                             <div class="user_name">{{$usuario['nome'] ?? ''}}</div>
                             <!-- <div class="user_score">ETH $291.36</div> -->
                         </div>
                         <div class="avatar box-42">
-                            <img src="img/avatar.png" alt="avatar"><span class="verified"><svg class="crumina-icon">
-                                    <use xlink:href="#check-icon"></use>
-                                </svg></span>
+                            <img src="img/avatar.png" alt="avatar">
                         </div>
                        
                         <div id="profile-dropdown" class="cryptoki-notif-target">
@@ -114,33 +105,38 @@
                             <div class="profile-dropdown-body">
                                 <div class="profile-heading">
                                     <div class="profile-avatar avatar box-26">
-                                        <img src="img/avatar.png" alt="avatar"><span class="verified"><svg
-                                                class="crumina-icon">
-                                                <use xlink:href="#check-icon"></use>
-                                            </svg></span>
+                                        <img src="img/avatar.png" alt="avatar">
                                     </div>
                                 </div>
                                 <ul class="profile-menu">
                                     <li><a href="{{route('usuario.index')}}"><svg class="crumina-icon">
                                                 <use xlink:href="#user-icon"></use>
                                             </svg>Perfil</a></li>
+                                    <li><a href="{{route('projeto.criar')}}"><svg class="crumina-icon">
+                                        <use xlink:href="#picture-icon"></use>
+                                    </svg>Criar Projeto</a></li>
                                     <li><a href="10-profile-dashboard.html"><svg class="crumina-icon">
                                                 <use xlink:href="#dashboard-icon"></use>
                                             </svg>Meus Projetos</a></li>
                                     <li><a href="14-profile-payment-history.html"><svg class="crumina-icon">
                                                 <use xlink:href="#dollar-icon"></use>
                                             </svg>Meus Investimentos</a></li>
-                                    <li><a href="15-profile-purchases.html"><svg class="crumina-icon">
+                                    <li><a href="{{ route('usuario.carteira') }}"><svg class="crumina-icon">
                                                 <use xlink:href="#wallet-icon"></use>
                                             </svg>Minha Carteira</a></li>
-                                    <li class="logout"><a href="!#"><svg class="crumina-icon">
+                                    <li class="logout"><a href="#"><svg class="crumina-icon">
                                                 <use xlink:href="#logout-icon"></use>
                                             </svg>Sair</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- header user profile -->
+                    @else
+                        <div class="header-user-profile cryptoki-notif-bttn">
+                            <a class="btn btn-wide btn-dark" href="{{route('site.login')}}">Login</a>
+                        </div>
+                    @endif
+
                 </div>
             </div>
             <!-- header search block -->

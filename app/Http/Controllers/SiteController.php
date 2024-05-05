@@ -65,7 +65,7 @@ class SiteController extends Controller
             'name'          => $request->usuario,
             'perfil'        => 2,
             'carteira'      => $nova_carteira['address'],
-            'carteira_id'    => $nova_carteira['id'],
+            'carteira_id'   => $nova_carteira['id'],
             'projeto_id'    => $nova_carteira['projectId'],
             'email'         => $request->email,
             'password'      => $request->senha,

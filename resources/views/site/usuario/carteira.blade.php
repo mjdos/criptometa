@@ -1,58 +1,196 @@
 @include('site.layouts.header')
-
+@php
+    $usuario = Session::get('usuario');
+@endphp
 <!-- main content area -->
 <div class="primary-content-area container content-padding grid-left-sidebar">
+    
     @include('site.usuario.menu')
-    <div class="main-content-area">
-        <div class="page-title">
-            <h2>
-                <span class="gradient-text">Profile</span> Info
-            </h2>
-        </div>
-        <div class="user-db-content-area">
-            <form class="cryptoki-form" id="personal-info-form">
-                <div class="user-db-title">Personal Info</div>
-                <div class="form-group">
-                    <div class="form-field">
-                        <label for="name">Nome Completo</label>
-                        <input type="text" id="name" value="Dexter Stark">
-                    </div>
-                    <div class="form-field">
-                        <label for="email">Email </label>
-                        <input type="email" id="email" value="dexstark@fakemail.com">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-field">
-                        <label for="username">Usuário</label>
-                        <input type="text" id="username" value="dexterstark">
-                    </div>
-                    <div class="form-field">
-                        <label for="phone">Telefone para contato</label>
-                        <input type="number" id="phone" value="">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-field">
-                        <label for="password-1">Trocar Senha</label>
-                        <input type="password" name="password" id="password-1">
-                    </div>
-                    <div class="form-field">
-                        <label for="password-2">Repetir Senha</label>
-                        <input type="password" name="password" id="password-2">
-                    </div>
-                </div>
-            </form>
-            <div class="upload-photo-box">
-                <div class="user-db-title">Capa</div>
-                <div class="user-avatar"><img src="img/content/profile/avatar-upload.png" alt=""></div>
-                <div class="user-cover-image"><img src="img/content/profile/profile-cover-1.png" alt=""></div>
-                <div class="upload-notice">As imagens devem estar no formato .png ou .jpg. Tamanho mínimo 100x100px (avatar) e
-                    1920x320px (capa) </div>
-            </div>
-        </div>
 
-        <button class="btn btn-wide btn-dark">Salvar Aterações</button>
+    <div class="main-content-area sales-statement">
+        <div class="page-title-section">
+            <h2><span class="gradient-text">Minha</span> Carteira</h2>
+        </div>
+        <div class="dashboard-wrapper">
+            <div class="user-stats-section">
+                <div class="stat-item">
+                    <div class="stat-number"><font size=4>{{$usuario['carteira'] ?? ''}}</font></div>
+                    <div class="stat-description">Endereço da Carteira</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number green"><font size=4>102 CCM</font></div>
+                    <div class="stat-description">Qtde de Cripto</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number"><font size=4>R$ 1,00</font></div>
+                    <div class="stat-description">Cotação do CCM</div>
+                </div>
+            </div>
+            <!--
+            <div class="statement-list">
+
+                <div class="statement">
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="heading-label">Date</th>
+                                <th scope="col" class="heading-label">Item details</th>
+                                <th scope="col" class="heading-label">Type</th>
+                                <th scope="col" class="heading-label">Price</th>
+                                <th scope="col" class="heading-label">Fee</th>
+                                <th scope="col" class="heading-label">Tax</th>
+                                <th scope="col" class="heading-label">Earnings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Date">
+                                    <div class="date">Jul 17, 2021</div>
+                                </td>
+                                <td data-label="Item details">
+                                    <div class="item-title gradient-text"><a href="05-product.html">Cryptoki NFT
+                                            and Digital Market PSD Template</a>
+                                    </div>
+                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
+                                </td>
+                                <td data-label="type" class="stat-value">Sale</td>
+                                <td data-label="price" class="stat-value">$12.00</td>
+                                <td data-label="fee" class="stat-value">-$1.00</td>
+                                <td data-label="tax" class="stat-value">-$1.00</td>
+                                <td data-label="earnings" class="green stat-value">$10.00</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date">
+                                    <div class="date">Jul 16, 2021</div>
+                                </td>
+                                <td data-label="Item details">
+                                    <div class="item-title gradient-text"><a href="05-product.html">Cryptoki NFT
+                                            and Digital Market PSD Template</a>
+                                    </div>
+                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
+                                </td>
+                                <td data-label="type" class="stat-value">Sale</td>
+                                <td data-label="price" class="stat-value">$12.00</td>
+                                <td data-label="fee" class="stat-value">-$1.00</td>
+                                <td data-label="tax" class="stat-value">-$1.00</td>
+                                <td data-label="earnings" class="green stat-value">$10.00</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date">
+                                    <div class="date">Jul 16, 2021</div>
+                                </td>
+                                <td data-label="Item details">
+                                    <div class="item-title gradient-text"><a href="05-product.html">Add Video
+                                            Reviews to your Theme!</a>
+                                    </div>
+                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
+                                </td>
+                                <td data-label="type" class="stat-value">Purchase</td>
+                                <td data-label="price" class="stat-value">$17.00</td>
+                                <td data-label="fee" class="stat-value">$0.00</td>
+                                <td data-label="tax" class="stat-value">$0.00</td>
+                                <td data-label="earnings" class="red stat-value">$17.00</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date">
+                                    <div class="date">Jul 14, 2021</div>
+                                </td>
+                                <td data-label="Item details">
+                                    <div class="item-title gradient-text"><a href="05-product.html">Twitter
+                                            Gaming Headers Pack 04</a>
+
+                                    </div>
+                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
+                                </td>
+                                <td data-label="type" class="stat-value">Sale</td>
+                                <td data-label="price" class="stat-value">$8.00</td>
+                                <td data-label="fee" class="stat-value">-$0.80</td>
+                                <td data-label="tax" class="stat-value">-$0.80</td>
+                                <td data-label="earnings" class="green stat-value">$6.60</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date">
+                                    <div class="date">Jul 14, 2021</div>
+                                </td>
+                                <td data-label="Item details">
+                                    <div class="item-title gradient-text"><a href="05-product.html">Twitter
+                                            Gaming Headers Pack 12</a>
+
+                                    </div>
+                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
+                                </td>
+                                <td data-label="type" class="stat-value">Sale</td>
+                                <td data-label="price" class="stat-value">$8.00</td>
+                                <td data-label="fee" class="stat-value">-$0.80</td>
+                                <td data-label="tax" class="stat-value">-$0.80</td>
+                                <td data-label="earnings" class="green stat-value">$6.60</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date">
+                                    <div class="date">Jul 13, 2021</div>
+                                </td>
+                                <td data-label="Item details">
+                                    <div class="item-title gradient-text"><a href="05-product.html">Cryptoki NFT
+                                            and Digital Market PSD Template</a>
+                                    </div>
+                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
+                                </td>
+                                <td data-label="type" class="stat-value">Sale</td>
+                                <td data-label="price" class="stat-value">$12.00</td>
+                                <td data-label="fee" class="stat-value">-$1.00</td>
+                                <td data-label="tax" class="stat-value">-$1.00</td>
+                                <td data-label="earnings" class="green stat-value">$10.00</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date">
+                                    <div class="date">Jul 9, 2021</div>
+                                </td>
+                                <td data-label="Item details">
+                                    <div class="item-title gradient-text"><a href="05-product.html">Twitter
+                                            Gaming Headers Pack 08</a>
+                                    </div>
+                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
+                                </td>
+                                <td data-label="type" class="stat-value">Sale</td>
+                                <td data-label="price" class="stat-value">$8.00</td>
+                                <td data-label="fee" class="stat-value">-$0.80</td>
+                                <td data-label="tax" class="stat-value">-$0.80</td>
+                                <td data-label="earnings" class="green stat-value">$6.60</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Date">
+                                    <div class="date">July 8, 2021</div>
+                                </td>
+                                <td data-label="Item details">
+                                    <div class="item-title gradient-text"><a href="05-product.html">Cryptoki NFT
+                                            and Digital Market PSD Template</a>
+                                    </div>
+                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
+                                </td>
+                                <td data-label="type" class="stat-value">Sale</td>
+                                <td data-label="price" class="stat-value">$12.00</td>
+                                <td data-label="fee" class="stat-value">-$1.00</td>
+                                <td data-label="tax" class="stat-value">-$1.00</td>
+                                <td data-label="earnings" class="green stat-value">$10.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination-section flex-right">
+                    <ul class="pagination-list">
+                        <li class="page-item page-nav-prev"><a href="#">Prev</a></li>
+                        <li class="page-item"><a href="#">01</a></li>
+                        <li class="page-item"><a href="#">02</a></li>
+                        <li class="page-item"><a href="#">03</a></li>
+                        <li class="page-item page-more-link"><a href="#">...</a></li>
+                        <li class="page-item"><a href="#">16</a></li>
+                        <li class="page-item page-nav-next"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+            -->
+        </div>
     </div>
 
 </div>

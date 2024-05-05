@@ -6,16 +6,16 @@
     <div class="main-content-area">
         <div class="page-title">
             <h2>
-                <span class="gradient-text">Profile</span> Info
+                <span class="gradient-text">Perfil</span>
             </h2>
         </div>
         <div class="user-db-content-area">
             <form class="cryptoki-form" id="personal-info-form">
-                <div class="user-db-title">Personal Info</div>
+                <div class="user-db-title">Informações Pessoais</div>
                 <div class="form-group">
                     <div class="form-field">
                         <label for="name">Nome Completo</label>
-                        <input type="text" id="name" value="Dexter Stark">
+                        <input type="text" id="name" value="#">
                     </div>
                     <div class="form-field">
                         <label for="email">Email </label>
