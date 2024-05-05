@@ -363,7 +363,7 @@
                     <div class="header-user-profile cryptoki-notif-bttn" data-target="profile-dropdown">
                         <div class="user-meta">
 
-                            <div class="user_name">{{$usuario['nome']}}</div>
+                            <div class="user_name">{{$usuario['nome'] ?? ''}}</div>
                             <!-- <div class="user_score">ETH $291.36</div> -->
                         </div>
                         <div class="avatar box-42">

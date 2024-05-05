@@ -23,4 +23,9 @@ class Projetos extends Model
         'imagem',
         'carteira',
     ];
+
+    public function autor()
+    {
+        return $this->belongsTo(User::class, 'autor_id');
+    }
 }
