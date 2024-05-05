@@ -6,15 +6,17 @@ use App\Models\Projetos;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session ;
+use Illuminate\Support\Facades\Session;
 
 class SiteController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('site.home');
     }
 
-    public function login(){
+    public function login()
+    {
         return view('site.login');
     }
 
@@ -28,8 +30,7 @@ class SiteController extends Controller
             'password' => $request->senha
         ];
 
-        if(Auth::attempt($credentials))
-        {
+        if (Auth::attempt($credentials)) {
 
             $user = Auth::user();
 
@@ -42,21 +43,22 @@ class SiteController extends Controller
                 'carteira_id'   => $user->carteira_id,
                 'projeto_id'    => $user->projeto_id
             ];
-            
+
             Session::put(['usuario' => $usuario_logado]);
 
             return redirect()->route('site.index');
-
         }
 
         return redirect()->back()->withInput()->withErrors(["Usuário ou Senha Incorretos."]);
     }
 
-    public function cadastro(){
+    public function cadastro()
+    {
         return view('site.cadastro');
     }
-    
-    public function cadastroStore(Request $request){
+
+    public function cadastroStore(Request $request)
+    {
 
         $lumx = new ApiLumxController;
         $nova_carteira = $lumx->criarCarteira();
@@ -69,26 +71,29 @@ class SiteController extends Controller
             'projeto_id'    => $nova_carteira['projectId'],
             'email'         => $request->email,
             'password'      => $request->senha,
-            
+
         ]);
 
         return view('site.login');
     }
 
-    public function projetoIndex($id){
+    public function projetoIndex($id)
+    {
 
         $projeto = Projetos::find($id);
-        
+
         return view('site.projeto.index', compact('projeto'));
     }
 
-    public function projetoCriar(){
+    public function projetoCriar()
+    {
         return view('site.projeto.criar');
     }
 
-    public function projetoStore(Request $request){
-        
-        if($request->file('imagem')->isValid()) {
+    public function projetoStore(Request $request)
+    {
+
+        if ($request->file('imagem')->isValid()) {
             $path = $request->file('imagem')->store('storage/imagemProjetos');
             $imagem_1 =  $path;
         }
@@ -109,17 +114,36 @@ class SiteController extends Controller
         return redirect()->route('projeto.explorar');
     }
 
-    public function projetos(){
-        
+    public function projetos()
+    {
+
         $projetos = Projetos::all();
 
         return view('site.projeto.explorar', compact('projetos'));
     }
 
-    public function meus_projetos(){
+    public function meus_projetos($id){
         
-        $projetos = Projetos::all();
+        $projetos = Projetos::where('autor_id', $id)->get();
 
         return view('site.usuario.meus_projetos', compact('projetos'));
+    }    
+
+    public function showProjetos(Request $request)
+    {
+
+        $user = $request->user(); // Obtém o usuário autenticado
+
+        $projetos = Projetos::where('autor_id', $user->id)->get();
+
+        return view('site.usuario.projeto', compact('projetos'));
     }
+
+    function editarProjetos($di)
+    {
+
+        return view('site.projeto.editar', compact('projetos'));
+    }
+
+
 }

@@ -56,7 +56,10 @@ require __DIR__.'/painel.php';
     //Tela Carteira do Usuário
     Route::get('/usuario-carteira', function () {return view('site.usuario.carteira');})->name('usuario.carteira');
 
-
+    //Tela projetos do Usuário
+    Route::get('/usuario-meus-projeto',[SiteController::class, 'showProjetos'])->name('usuario.projetos');
+    //Tela projetos do Usuário editar
+    Route::get('/usuario-meus-projeto/{id}',[SiteController::class, 'editarProjetos'])->name('usuario.projetosEditar');
 
     
     //Quem Somos
