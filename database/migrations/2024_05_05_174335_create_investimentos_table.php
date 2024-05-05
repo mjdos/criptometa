@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('projeto_id')
                 ->references('id')
                 ->on('projetos');
+            $table->integer('valor')->unsigned();
             $table->timestamps();
         });
     }

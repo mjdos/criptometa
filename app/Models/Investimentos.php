@@ -12,7 +12,7 @@ class Investimentos extends Model
     protected $table = 'investimentos';
 
     protected $fillable = [
-        'nome',
+        'valor',
         'investidor_id',
         'projeto_id',
     ];
