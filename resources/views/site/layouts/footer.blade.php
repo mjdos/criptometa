@@ -1,7 +1,7 @@
         <!--Footer area-->
         <footer class="footer footer-margin">
             <div class="footer-wrapper container">
-   
+
                 <div class="footer-content">
                     <div class="footer-row flex-space-between align-items-center">
                         <div class="logo">
@@ -35,64 +35,13 @@
                                 <div class="widget-content flex-space-between">
                                     <div class="is-two-col-element">
                                         <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link" href="01-home-ds.html">Home</a>
+                                            <li class="menu-item"><a class="menu-link" href="{{route('site.index')}}">Inicial</a>
                                             </li>
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="02-explore.html">Explore</a></li>
                                         </ul>
                                         <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="06-profile-page.html">Profile page</a></li>
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="03-shop-category.html">Shop</a></li>
+                                            <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
                                         </ul>
                                     </div>
-                                    <div class="is-two-col-element">
-                                        <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="07-sellers.html">Sellers</a></li>
-                                            <li class="menu-item"><a class="menu-link" href="05-product.html">Product
-                                                    Page</a></li>
-                                        </ul>
-                                        <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link" href="23-login.html">Login &
-                                                    Register</a>
-                                            </li>
-                                            <li class="menu-item"><a class="menu-link"
-                                                    href="20-become-a-creator.html">Become a Seller</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-column">
-                            <div class="footer-widget">
-                                <div class="widget-title">Explore</div>
-                                <div class="is-two-col-element">
-                                    <ul class="footer-menu">
-                                        <li class="menu-item"><a class="menu-link" href="!#">UI Templates</a></li>
-                                        <li class="menu-item"><a class="menu-link" href="!#">Coded Templates</a></li>
-                                    </ul>
-                                    <ul class="footer-menu">
-                                        <li class="menu-item"><a class="menu-link" href="!#">Social Graphics</a></li>
-                                        <li class="menu-item"><a class="menu-link" href="!#">Video Tutorials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-column">
-                            <div class="footer-widget">
-                                <div class="widget-title">Helpful Links</div>
-                                <div class="is-two-col-element">
-                                    <ul class="footer-menu">
-                                        <li class="menu-item"><a class="menu-link" href="17-blog-classic.html">Our
-                                                Blog</a></li>
-                                        <li class="menu-item"><a class="menu-link" href="21-contact.html">Contato</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="footer-menu">
-                                        <li class="menu-item"><a class="menu-link" href="22-faq.html">FAQs</a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -109,18 +58,18 @@
             </div>
         </footer>
         <!--Footer area-->
-    </div>
+        </div>
 
 
 
-    <!-- Add your site or application content here -->
-  <script defer src="js/swiper-bundle.min.js"></script>
-  <script defer src="js/main.js"></script>
-  <script defer src="js/countdown.js"></script>
-  <script defer src="js/waves.min.js"></script>
-  <script async src="js/svg-loader.js"></script>
-  <script defer src="js/nice-select2.js"></script>
+        <!-- Add your site or application content here -->
+        <script defer src="js/swiper-bundle.min.js"></script>
+        <script defer src="js/main.js"></script>
+        <script defer src="js/countdown.js"></script>
+        <script defer src="js/waves.min.js"></script>
+        <script async src="js/svg-loader.js"></script>
+        <script defer src="js/nice-select2.js"></script>
 
-</body>
+        </body>
 
-</html>
+        </html>
