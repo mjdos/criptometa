@@ -111,4 +111,11 @@ class SiteController extends Controller
 
         return view('site.projeto.explorar', compact('projetos'));
     }
+
+    public function meus_projetos(){
+        
+        $projetos = Projetos::all();
+
+        return view('site.usuario.meus_projetos', compact('projetos'));
+    }
 }
