@@ -10,6 +10,22 @@
                                 <div class="logo-text">CriptoMeta</div>
                             </a>
                         </div>
+
+                    </div>
+                    <br>
+                    <div class="widget-content flex-space-between">
+                        <div class="is-two-col-element">
+                            <ul class="footer-menu">
+                                <li class="menu-item"><a class="menu-link" href="{{route('site.index')}}">Inicial</a>
+                                </li>
+                            </ul>
+                            <ul class="footer-menu">
+                                <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="widget-content flex-space-between">
                         <ul class="social-icons-list">
                             <li class="social-icon"><a href="#"><svg class="crumina-icon">
                                         <use xlink:href="#facebook-icon"></use>
@@ -27,24 +43,6 @@
                                         <use xlink:href="#discord-icon"></use>
                                     </svg></a></li>
                         </ul>
-                    </div>
-                    <div class="footer-row flex-space-between flex-wrap">
-                        <div class="footer-column">
-                            <div class="footer-widget">
-                                <div class="widget-title">CriptoMeta Market</div>
-                                <div class="widget-content flex-space-between">
-                                    <div class="is-two-col-element">
-                                        <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link" href="{{route('site.index')}}">Inicial</a>
-                                            </li>
-                                        </ul>
-                                        <ul class="footer-menu">
-                                            <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!--  footer content -->
