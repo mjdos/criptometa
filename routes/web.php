@@ -41,11 +41,12 @@ require __DIR__.'/painel.php';
     //adicionar novidade
     Route::get('/projeto-novidade', function () {return view('site.projeto.novidade');})->name('projeto.novidade');
 
-    //apoiar o projeto
-    Route::get('/usuario-index/{id?}', function () {return view('site.usuario.index');})->name('usuario.index');
-
+    
     //meus projetos
-    Route::get('/meus-projetos', [SiteController::class, 'meus_projetos'])->name('meus_projetos');
+    Route::get('/meus-projetos-{id}', [SiteController::class, 'meus_projetos'])->name('meus_projetos');
+
+    //projetos usuario
+    Route::get('/projeto_usuario-{id}', [SiteController::class, 'projeto_usuario'])->name('projeto_usuario');
 
     ///// TELAS DO USUÁRIO
     // Tela Perfil do Usuário
@@ -57,9 +58,10 @@ require __DIR__.'/painel.php';
     //Tela projetos do Usuário
     Route::get('/usuario-meus-projeto',[SiteController::class, 'showProjetos'])->name('usuario.projetos');
     //Tela projetos do Usuário editar
-    Route::get('/usuario-meus-projeto/{id}',[SiteController::class, 'editarProjetos'])->name('usuario.projetosEditar');
+    Route::get('/usuario-meus-projeto/{id}/editar',[SiteController::class, 'editarProjetos'])->name('usuario.projetosEditar');
 
-    
+    //apoiar o projeto
+    // Route::get('/projeto-apoiar-{id}', [SiteController::class, 'apoiarProjeto'])->name('projeto.apoiar');
     //Quem Somos
     Route::get('/quem-somos', function () {return view('site.quem-somos');})->name('quemsomos');
     Route::get('/contato', function () {return view('site.contato');})->name('contato');

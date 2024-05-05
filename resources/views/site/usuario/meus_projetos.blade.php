@@ -51,7 +51,7 @@
                                 <td>{{ $projeto->descricao}}</td>
                                 <td>{{ $projeto->carteira }}</td>
                                 <td style="padding-right: 0px;">
-                                    <a href=" # "  class="btn btn-fullwidth gradient-background">
+                                    <a href="{{ route('projeto.index', $projeto->id) }}"  class="btn btn-fullwidth gradient-background">
                                     <i class="bi bi-backspace-fill"></i>
                                         Detalhes
                                     </a>
@@ -66,18 +66,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-
-                <div class="pagination-section flex-right">
-                    <ul class="pagination-list">
-                        <li class="page-item page-nav-prev"><a href="#">Prev</a></li>
-                        <li class="page-item"><a href="#">01</a></li>
-                        <li class="page-item"><a href="#">02</a></li>
-                        <li class="page-item"><a href="#">03</a></li>
-                        <li class="page-item page-more-link"><a href="#">...</a></li>
-                        <li class="page-item"><a href="#">16</a></li>
-                        <li class="page-item page-nav-next"><a href="#">Next</a></li>
-                    </ul>
                 </div>
             </div>
            

@@ -16,17 +16,17 @@
                                     <div class="product-info">
                                         <div class="product-thumb">
                                             <a href="05-product.html">
-                                                <img src="{{ url($projeto->imagem)}}" alt="">
+                                                <img src="img/proj_{{$projeto->id}}.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="product-details">
                                             <div class="product-name">
                                                 <a href="05-product.html">{{$projeto->nome}}</a>
                                             </div>
-                                            <div class="license-type">categoria do projeto</div>
+                                            <div class="license-type">{{$projeto->descricao}}</div>
                                         </div>
                                     </div>
-                                    <div class="product-price">R${{$projeto->valor}}</div>
+                                    <div class="product-price">R${{$projeto->carteira}}</div>
                                 </div>
                             </div>
                             <div class="payment-method-section">
