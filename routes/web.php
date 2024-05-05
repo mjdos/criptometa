@@ -41,9 +41,10 @@ require __DIR__.'/painel.php';
 
 
     //apoiar o projeto
-    Route::get('/projeto-apoiar', function () {return view('site.projeto.apoiar');})->name('projeto.apoiar');
+    Route::get('/projeto-apoiar/{id?}', function () {return view('site.projeto.apoiar');})->name('projeto.apoiar');
 
-
+    //apoiar o projeto
+    Route::get('/usuario-index/{id?}', function () {return view('site.usuario.index');})->name('usuario.index');
 
     ///// TELAS DO USUÁRIO
     //Tela Perfil do Usuário
