@@ -145,5 +145,13 @@ class SiteController extends Controller
         return view('site.projeto.editar', compact('projetos'));
     }
 
+    public function projeto_usuario($id)
+    {
+        $projetos = Projetos::where('autor_id', $id)->get();
+        
+
+        return view('site.projeto.projeto_usuario', compact('projetos'));
+    }
+
 
 }

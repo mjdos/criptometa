@@ -47,7 +47,10 @@ require __DIR__.'/painel.php';
     Route::get('/usuario-index/{id?}', function () {return view('site.usuario.index');})->name('usuario.index');
 
     //meus projetos
-    Route::get('/meus-projetos', [SiteController::class, 'meus_projetos'])->name('meus_projetos');
+    Route::get('/meus-projetos-{id}', [SiteController::class, 'meus_projetos'])->name('meus_projetos');
+
+    //projetos usuario
+    Route::get('/projeto_usuario-{id}', [SiteController::class, 'projeto_usuario'])->name('projeto_usuario');
 
     ///// TELAS DO USUÁRIO
     // Tela Perfil do Usuário
