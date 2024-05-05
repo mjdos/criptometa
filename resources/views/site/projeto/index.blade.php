@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="product-image">
-                    <img src="{{url($projeto->imagem)}}" style="height: 700px;" alt="Product Image">
+                    <img src="img/proj_{{$projeto->id}}.jpg" style="height: 700px;" alt="Product Image">
                 </div>
                 <div class="product-info">
                     <div class="tabs-block swiper-container">

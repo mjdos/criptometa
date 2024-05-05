@@ -51,7 +51,7 @@
                                 <td>{{ $projeto->descricao}}</td>
                                 <td>{{ $projeto->carteira }}</td>
                                 <td style="padding-right: 0px;">
-                                    <a href=" # "  class="btn btn-fullwidth gradient-background">
+                                    <a href="{{ route('projeto.index', $projeto->id) }}"  class="btn btn-fullwidth gradient-background">
                                     <i class="bi bi-backspace-fill"></i>
                                         Detalhes
                                     </a>
