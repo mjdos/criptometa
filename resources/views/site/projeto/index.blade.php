@@ -8,12 +8,6 @@
                     <div class="product-subtitle">
                         <div class="product-author">
                             <span class="avatar box-26">
-                                <a href="06-profile-page.html"><img src="img/avatar.png" alt=""></a>
-                                <span class="verified">
-                                    <svg class="crumina-icon">
-                                        <use xlink:href="#check-icon"></use>
-                                    </svg>
-                                </span>
                             </span>{{$projeto->first()->autor->name}}
                         </div>
                     </div>
@@ -43,7 +37,7 @@
                                 <a href="#tab2">Metas<span class="count">5</span></a>
                             </li>
                             <li class="swiper-slide">
-                                <a href="#tab4">Recompensas<span class="count"></span></a>
+                                <a href="#tab3">Recompensas<span class="count"></span></a>
                             </li>
                             <li class="swiper-slide">
                                 <a href="#tab5">Apoiadores<span class="count">{{ count($apoiadores)}}</span></a>
@@ -84,47 +78,6 @@
                                 </div>
                             </div>
                             <div id="tab3" class="tab">
-                                <div class="tab-content">
-                                    <ul class="reviews-list">
-                                        <li class="review-item">
-                                            <div class="review-header">
-                                                <div class="review-title">This is an incredible template!!!!!!!</div>
-                                                <div class="item-rating">
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class=""><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                </div>
-                                            </div>
-                                            <div class="review-body">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                Ut
-                                                enim ad minim veniam, quis nostrud exercitation ullamco...</div>
-                                            <div class="review-footer">
-                                                <div class="review-author"><span class="avatar box-26"><a
-                                                            href="06-profile-page.html"><img src="img/avatar-2.png"
-                                                                alt=""></a><span class="verified"><svg
-                                                                class="crumina-icon">
-                                                                <use xlink:href="#check-icon"></use>
-                                                            </svg></span></span>@JackieJ</div>
-                                                <div class="publish-date">2 hours ago</div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div id="tab4" class="tab">
                                 <div class="tab-content">
                                     <div class="product-description">
                                         <div class="title h6">O valor da sua doação também te recompensa!</div>
