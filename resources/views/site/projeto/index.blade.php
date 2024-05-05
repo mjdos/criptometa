@@ -4,7 +4,7 @@
         <div class="primary-content-area container content-padding product-page-ds">
             <div class="main-content-area product-ds">
                 <div class="product-title-section">
-                    <h2>NOME DO PROJETO</h2>
+                    <h2>{{$projeto->nome}}</h2>
                     <div class="product-subtitle">
                         <div class="product-author">
                             <span class="avatar box-26">
@@ -14,33 +14,12 @@
                                         <use xlink:href="#check-icon"></use>
                                     </svg>
                                 </span>
-                            </span>@USUÁRIO QUE CRIOU O PROJETO
-                        </div>
-                        <div class="item-category social-graphics">
-                            TIPO DO PROJETO
-                        </div>
-                        {{-- SE TIVER COLOCAR AVALIAÇÃO DO PROJETO --}}
-                        <div class="item-rating">
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span class="filled"><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
-                            <span><svg class="crumina-icon">
-                                    <use xlink:href="#star2-icon"></use>
-                                </svg></span>
+                            </span>{{$projeto->first()->autor->name}}
                         </div>
                     </div>
                 </div>
                 <div class="product-image">
-                    <img src="img/content/product-img/product-2.png" alt="Product Image">
+                    <img src="{{url($projeto->imagem)}}" alt="Product Image">
                 </div>
                 <div class="product-info">
                     <div class="tabs-block swiper-container">
@@ -201,51 +180,6 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <div class="leave-review">
-                                        <h5 class="content-heading">Leave a review</h5>
-                                        <form class="cryptoki-form" id="comment-form">
-                                            <div class="rating-field">
-                                                <label for="name">Your rating</label>
-                                                <div class="item-rating">
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class="filled"><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                    <span class=""><svg class="crumina-icon">
-                                                            <use xlink:href="#star2-icon"></use>
-                                                        </svg></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-field">
-                                                <label for="name">Review Title</label>
-                                                <input class="" type="text" id="title" name="title">
-                                            </div>
-                                            <div class="form-field comment-area">
-                                                <label for="message">Your comment</label>
-                                                <textarea name="message" id="message" class="comment-form" cols="30"
-                                                    rows="10"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="form-field">
-                                                    <label for="name">Your name</label>
-                                                    <input class="" type="text" id="name" name="name">
-                                                </div>
-                                                <div class="form-field">
-                                                    <label for="email">Email address</label>
-                                                    <input class="" type="email" id="email" name="email">
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-normal btn-dark">Post review</button>
-                                        </form>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -262,11 +196,8 @@
                     <div class="product-purchase-info">
                         <form class="cryptoki-form" id="purchase-form">
                             <div class="product-price">
-                                <div class="price">$ 0000 </div>
+                                <div class="price">$ {{$projeto->valor}} </div>
                                 <div class="label">Valor da Meta</div>
-                            </div>
-                            <div class="pricing-plans">
-                                <input type="range" min="0" max="100" value="50" class="purple-slider" id="myRange">
                             </div>
                             <a  href="{{route('projeto.apoiar')}}" class="btn btn-fullwidth  gradient-background" type="submit">Apoiar este projeto!</a>
                         </form>
@@ -281,7 +212,7 @@
                                
                             </ul>
                             <ul class="details-value">
-                                <li>March 26th, 2021</li>
+                                <li>{{date('d/m/Y', strtotime($projeto->created_at))}}</li>
                                 <li>Colocar o tipo do projeto</li>
                             </ul>
                         </div>

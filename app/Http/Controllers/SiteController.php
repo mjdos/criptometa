@@ -75,8 +75,11 @@ class SiteController extends Controller
         return view('site.login');
     }
 
-    public function projetoIndex(){
-        return view('site.projeto.index');
+    public function projetoIndex($id){
+
+        $projeto = Projetos::find($id);
+        
+        return view('site.projeto.index', compact('projeto'));
     }
 
     public function projetoCriar(){
@@ -91,8 +94,9 @@ class SiteController extends Controller
         }
         $usuario = Session::get('usuario');
         Projetos::create([
-            'nome'      => $request->nome,
             'autor_id'  => $usuario['id'],
+            'nome'      => $request->nome,
+            'valor'      => $request->valor,
             'descricao' => $request->descricao,
             'meta_1'    => $request->meta_1,
             'meta_2'    => $request->meta_2,
