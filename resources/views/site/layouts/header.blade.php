@@ -115,7 +115,8 @@
                                     <li><a href="{{route('projeto.criar')}}"><svg class="crumina-icon">
                                         <use xlink:href="#picture-icon"></use>
                                     </svg>Criar Projeto</a></li>
-                                    <li><a href="#"><svg class="crumina-icon">
+                                    <li><a href="{{  route('meus_projetos', $usuario['id'])}}"><svg class="crumina-icon">
+                                    <!-- <li><a href="{{route('usuario.projetos')}}"><svg class="crumina-icon"> -->
                                                 <use xlink:href="#dashboard-icon"></use>
                                             </svg>Meus Projetos</a></li>
                                     <li><a href="#"><svg class="crumina-icon">
