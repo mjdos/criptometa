@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('projetos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->string('descricao');
+            $table->longText('descricao');
             $table->string('meta_1');
             $table->string('meta_2');
             $table->string('meta_3');
             $table->string('meta_4');
             $table->string('meta_5');
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
+            $table->string('carteira');
             $table->timestamps();
         });
     }

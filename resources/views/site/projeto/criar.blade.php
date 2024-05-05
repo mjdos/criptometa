@@ -8,17 +8,17 @@
             <h2> Criar <span class="gradient-text">Projeto</span></h2>
         </div>
         <!--  upload item form -->
-        <form class="cryptoki-form" id="upload-item-form">
+        <form action="{{ route('projeto.store')}}" method="post" enctype="multipart/form-data"  class="cryptoki-form" id="upload-item-form">
+            @csrf
             <div class="upload-row">
                 <div class="upload-column">
                     <h5>Detalhes do projeto</h5>
 
                     <div class="form-field">
-                        <label for="item-name">Nome do Projeto</label>
-                        <input type="text" id="projeto_nome" name="projeto_nome">
+                        <label for="item-name">Nome</label>
+                        <input type="text" name="nome">
                     </div>
-
-                    <div class="form-field">
+                    <!-- <div class="form-field">
                         <label for="item-category">Categoria do Projeto</label>
                         <select id="projeto_categoria" name="projeto_categoria">
                             <option value="" disabled selected>Selecione</option>
@@ -35,11 +35,9 @@
                             <option value="meio-ambiente">Meio Ambiente</option>
                             <option value="comunidade">Projetos Comunitários</option>
                         </select>
-                    </div>
+                    </div> -->
 
-                    <div class="form-field">
-                        <label for="item-name">Imagem do Projeto</label>
-                        {{-- <input type="file" name="projeto_imagem" id="projeto_imagem" class="btn btn-normal btn-dark browse-btn waves-effect waves-button waves-float waves-light"> --}}
+                    <div class="form-field">                        
                         <div class="upload-container">
                             <div class="artwork-upload">
                                 <div class="label">Imagem</div>
@@ -47,46 +45,42 @@
                                         <use xlink:href="#upload-icon"></use>
                                     </svg>
                                     <div class="upload-notice"> Max 120MB, PNG, JPEG, MP3, MP4</div>
-                                    <button
-                                        class="btn btn-normal btn-dark browse-btn waves-effect waves-button waves-float waves-light">Escolher Imagem</button>
+                                    <input type="file" name="imagem" class="btn btn-normal btn-dark browse-btn waves-effect waves-button waves-float waves-light"></input>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-field">
-                        <label for="item-description"></label>
-                        <input type="number" id="projeto_meta_1" name="projeto_meta_1">
+                        <label>1ª Meta</label>
+                        <input type="text" name="meta_1">
                     </div>
 
                     <div class="form-field">
-                        <label for="item-description"> 2ª Meta</label>
-                        <input type="number" id="projeto_meta_2" name="projeto_meta_2">
+                        <label>2ª Meta</label>
+                        <input type="text" name="meta_2">
                     </div>
 
                     <div class="form-field">
-                        <label for="item-description"> 3ª Meta</label>
-                        <input type="number" id="projeto_meta_3" name="projeto_meta_3">
+                        <label>3ª Meta</label>
+                        <input type="text" name="meta_3">
                     </div>
 
                     <div class="form-field">
-                        <label for="item-description">4ª Meta</label>
-                        <input type="number" id="projeto_meta_4" name="projeto_meta_4">
+                        <label>4ª Meta</label>
+                        <input type="text" name="meta_4">
                     </div>
 
                     <div class="form-field">
-                        <label for="item-description"> 5ª Meta</label>
-                        <input type="number" id="projeto_meta_5" name="projeto_meta_5">
+                        <label>5ª Meta</label>
+                        <input type="text" name="meta_5">
                     </div>
 
                     <div class="form-field">
-                        <label for="item-description">Descrição do Projeto</label>
-                        <textarea id="projeto_descricao" name="projeto_descricao" cols="30" rows="10"></textarea>
-
+                        <label>Descrição</label>
+                        <textarea name="descricao" cols="30" rows="10"></textarea>
                     </div>
-              
-
-                <input class="btn btn-wide gradient-background" type="submit" value="Upload Item">
+                <input class="btn btn-wide gradient-background" type="submit" value="Salvar">
             </div>
     </div>
     </form>

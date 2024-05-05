@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Projetos;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,5 +63,35 @@ class SiteController extends Controller
         ]);
 
         return view('site.login');
+    }
+
+    public function projetoIndex(){
+        return view('site.projeto.index');
+    }
+
+    public function projetoCriar(){
+        return view('site.projeto.criar');
+    }
+
+    public function projetoStore(Request $request){
+        
+        if($request->file('imagem')->isValid()) {
+            $path = $request->file('imagem')->store('public/imagemProjetos');
+            $imagem_1 =  $path;
+            
+        }
+
+        Projetos::create([
+            'nome'      => $request->nome,
+            'descricao' => $request->descricao,
+            'meta_1'    => $request->meta_1,
+            'meta_2'    => $request->meta_2,
+            'meta_3'    => $request->meta_3,
+            'meta_4'    => $request->meta_4,
+            'meta_5'    => $request->meta_5,
+            'imagem'    => $imagem_1,
+        ]);
+
+        return view('site.projeto.explorar');
     }
 }
