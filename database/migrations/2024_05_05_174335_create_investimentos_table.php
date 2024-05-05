@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('investimentos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('investidor_id');
+            $table->integer('investidor_id')->unsigned();
             $table->foreign('investidor_id')
                 ->references('id')
                 ->on('users');
-            $table->integer('projeto_id');
+            $table->integer('projeto_id')->unsigned();
             $table->foreign('projeto_id')
-                ->references('projetos')
-                ->on('users');
+                ->references('id')
+                ->on('projetos');
             $table->timestamps();
         });
     }

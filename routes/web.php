@@ -21,7 +21,7 @@ require __DIR__.'/painel.php';
     Route::post('/cadastro', [SiteController::class,'cadastroStore'])->name('cadastro.store');
 
     // projeto
-    Route::get('/projeto-index', [SiteController::class, 'projetoIndex'])->name('projeto.index');
+    Route::get('/projeto-index-{id}', [SiteController::class, 'projetoIndex'])->name('projeto.index');
     //criar
     Route::get('/projeto-criar', [SiteController::class, 'projetoCriar'])->name('projeto.criar');
     Route::post('/projeto-criar', [SiteController::class, 'projetoStore'])->name('projeto.store');
