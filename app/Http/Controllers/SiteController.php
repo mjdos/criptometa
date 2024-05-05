@@ -94,6 +94,8 @@ class SiteController extends Controller
 
     public function projetoStore(Request $request)
     {
+        $lumx = new ApiLumxController;
+        $nova_carteira = $lumx->criarCarteira();
 
         if ($request->file('imagem')->isValid()) {
             $path = $request->file('imagem')->store('storage/imagemProjetos');
@@ -101,16 +103,19 @@ class SiteController extends Controller
         }
         $usuario = Session::get('usuario');
         Projetos::create([
-            'autor_id'  => $usuario['id'],
-            'nome'      => $request->nome,
-            'valor'      => $request->valor,
-            'descricao' => $request->descricao,
-            'meta_1'    => $request->meta_1,
-            'meta_2'    => $request->meta_2,
-            'meta_3'    => $request->meta_3,
-            'meta_4'    => $request->meta_4,
-            'meta_5'    => $request->meta_5,
-            'imagem'    => $imagem_1,
+            'autor_id'      => $usuario['id'],
+            'nome'          => $request->nome,
+            'valor'         => $request->valor,
+            'carteira'      => $nova_carteira['address'],
+            'carteira_id'   => $nova_carteira['id'],
+            'projeto_id'    => $nova_carteira['projectId'],
+            'descricao'     => $request->descricao,
+            'meta_1'        => $request->meta_1,
+            'meta_2'        => $request->meta_2,
+            'meta_3'        => $request->meta_3,
+            'meta_4'        => $request->meta_4,
+            'meta_5'        => $request->meta_5,
+            'imagem'        => $imagem_1,
         ]);
 
         return redirect()->route('projeto.explorar');

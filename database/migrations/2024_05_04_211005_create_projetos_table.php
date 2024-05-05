@@ -20,13 +20,15 @@ return new class extends Migration
             $table->string('nome');
             $table->longText('descricao');
             $table->integer('valor')->nullable();
+            $table->string('carteira')->nullable();
+            $table->string('carteira_id')->nullable();
+            $table->string('projeto_id')->nullable();
             $table->string('meta_1');
             $table->string('meta_2');
             $table->string('meta_3');
             $table->string('meta_4');
             $table->string('meta_5');
             $table->string('imagem')->nullable();
-            $table->string('carteira');
             $table->timestamps();
         });
     }

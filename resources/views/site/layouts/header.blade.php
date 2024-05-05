@@ -78,8 +78,7 @@
                         <li class="menu-item"><a class="menu-link" href="{{route('site.index')}}">Inicial</a></li>
                         <li class="menu-item menu-item-has-children"><a class="menu-link" href="{{route('quemsomos')}}">Quem Somos</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
-                        <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Criar Projeto</a></li>
-                        <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Investir</a></li>
+                        <li class="menu-item"><a class="menu-link" href="{{route('projeto.criar')}}">Criar Projeto</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('contato')}}">Contato</a></li>
                     </ul>
                     <!--  navigation menu -->
