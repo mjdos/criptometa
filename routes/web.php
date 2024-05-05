@@ -13,9 +13,6 @@ require __DIR__.'/painel.php';
     Route::get('/login', [SiteController::class,'login'])->name('site.login');
     Route::post('/login', [SiteController::class,'logar'])->name('site.logar');
 
-    //pagina Campanha
-    Route::get('/campanha-tipo', function () {return view('site.campanha');})->name('site.campanha');
-
     //pagina cadastro
     Route::get('/cadastro', [SiteController::class,'cadastro'])->name('site.cadastro');
     Route::post('/cadastro', [SiteController::class,'cadastroStore'])->name('cadastro.store');
@@ -28,9 +25,14 @@ require __DIR__.'/painel.php';
 
     //adicionar explorar
     Route::get('/projeto-explorar', [SiteController::class, 'projetos'])->name('projeto.explorar');
+    //apoiar o projeto
+    Route::get('/projeto-apoiar-{id}', [SiteController::class, 'apoiar'])->name('projeto.apoiar');
+    Route::get('/projeto-investir-{id}', [SiteController::class, 'investir'])->name('projeto.investir');
 
 
 
+    //pagina Campanha
+    Route::get('/campanha-tipo', function () {return view('site.campanha');})->name('site.campanha');
     //adicionar meta 
     Route::get('/projeto-meta', function () {return view('site.projeto.meta');})->name('projeto.meta');
     //adicionar recompensa
@@ -39,9 +41,14 @@ require __DIR__.'/painel.php';
     //adicionar novidade
     Route::get('/projeto-novidade', function () {return view('site.projeto.novidade');})->name('projeto.novidade');
 
+    //apoiar o projeto
+    Route::get('/usuario-index/{id?}', function () {return view('site.usuario.index');})->name('usuario.index');
+
+    //meus projetos
+    Route::get('/meus-projetos', [SiteController::class, 'meus_projetos'])->name('meus_projetos');
 
     ///// TELAS DO USUÁRIO
-    //Tela Perfil do Usuário
+    // Tela Perfil do Usuário
     Route::get('/usuario-index', function () {return view('site.usuario.index');})->name('usuario.index');
 
     //Tela Carteira do Usuário

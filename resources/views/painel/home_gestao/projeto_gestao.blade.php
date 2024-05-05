@@ -23,14 +23,8 @@
                                 <tr class="fw-bolder text-muted bg-secondary">
                                     <th class="min-w-125px ps-2 rounded-start">Nome do projeto</th>
                                     <th class="min-w-125px">Descrição</th>
-                                    <th class="min-w-125px">1ª meta</th>
-                                    <th class="min-w-125px">2ª meta</th>
-                                    <th class="min-w-125px">3ª meta</th>
-                                    <th class="min-w-125px">4ª meta</th>
-                                    <th class="min-w-125px">5ª meta</th>
-                                    <th class="min-w-125px">imagem</th>
                                     <th class="min-w-125px">Carteira</th>
-                                    <th class="min-w-125px rounded-end">Data de registro</th>
+                                    <th class="min-w-125px ">Data de registro</th>
                                     <th class="min-w-125px rounded-end">Visualizar projeto</th>
                                 </tr>
                             </thead>
@@ -41,12 +35,6 @@
                                 <tr>
                                     <td style="padding-left: 10px;">{{ $projeto->nome }}</td>
                                     <td style="padding-left: 15px;">{{ $projeto->descricao }}</td>
-                                    <td>{{ $projeto->meta_1 }}</td>
-                                    <td>{{ $projeto->meta_2 }}</td>
-                                    <td>{{ $projeto->meta_3 }}</td>
-                                    <td>{{ $projeto->meta_4 }}</td>
-                                    <td>{{ $projeto->meta_5 }}</td>
-                                    <td>{{ $projeto->imagem }}</td>
                                     <td>{{ $projeto->carteira }}</td>
                                     <td>{{ $projeto->created_at }}</td>
                                     <td style="padding-left: 30px;">

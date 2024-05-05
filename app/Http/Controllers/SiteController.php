@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Investimentos;
 use App\Models\Projetos;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -81,8 +82,9 @@ class SiteController extends Controller
     {
 
         $projeto = Projetos::find($id);
+        $apoiadores = Investimentos::where('projeto_id', $id)->get();
 
-        return view('site.projeto.index', compact('projeto'));
+        return view('site.projeto.index', compact('projeto', 'apoiadores'));
     }
 
     public function projetoCriar()
@@ -122,6 +124,30 @@ class SiteController extends Controller
         return view('site.projeto.explorar', compact('projetos'));
     }
 
+    public function apoiar($id){
+        $projeto = Projetos::find($id);
+        return view('site.projeto.apoiar', compact('projeto'));
+    }
+
+    public function investir(Request $request, $id){
+        
+        $usuario = Session::get('usuario');
+        Investimentos::create([
+            'investidor_id'     => $usuario['id'],
+            'projeto_id'        => $id,
+            'valor'             => $request->valor,
+        ]);
+
+        return redirect()->route('projeto.explorar');
+    }
+
+    public function meus_projetos($id){
+        
+        $projetos = Projetos::where('autor_id', $id)->get();
+
+        return view('site.usuario.meus_projetos', compact('projetos'));
+    }    
+
     public function showProjetos(Request $request)
     {
 
@@ -143,4 +169,6 @@ class SiteController extends Controller
         return view('site.projeto.apoiar');
     }
     
+
+
 }
