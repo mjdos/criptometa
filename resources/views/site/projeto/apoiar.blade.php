@@ -9,22 +9,6 @@
             <div class="checkout-area">
                 <form class="cryptoki-form grid-2-columns" id="checkout-form">
                     <div class="form-column">
-                        <div class="form-group">
-                            <div class="form-field">
-                                <label for="name">Seu Nome</label>
-                                <input type="text" id="name">
-                            </div>
-                            <div class="form-field">
-                                <label for="email">Usuário</label>
-                                <input type="email" id="email">
-                            </div>
-                        </div>
-                        <div class="form-field">
-                            <label for="address">E-mail</label>
-                            <input type="text" id="address">
-                        </div>
-                    </div>
-                    <div class="form-column">
                         <div class="summary-section">
                             <div class="small-title">Projeto</div>
                             <div class="products-in-cart">
@@ -49,17 +33,17 @@
                                 </div>
                             </div>
                             <div class="payment-method-section">
-                                <div class="small-title">Payment Method</div>
+                                <div class="small-title">Métodos de Pagamentos</div>
                                 <div class="payment-method">
                                     <input type="radio" name="payment-method" id="paypal">
-                                    <label for="paypal">Paypal</label>
+                                    <label for="paypal">Pix</label>
                                     <div class="payment-description">Pay with your Paypal balance or connected bank
                                         account/ credit card! It’s quick and really secure, it just takes a few minutes
                                         to set it up!</div>
                                 </div>
                                 <div class="payment-method">
                                     <input type="radio" name="payment-method" id="credit-card">
-                                    <label for="credit-card">Credit or Debit Card</label>
+                                    <label for="credit-card">Cartão de Débito ou Crédito</label>
                                 </div>
                             </div>
                             <div class="complete-order-button">
