@@ -19,10 +19,10 @@
                     <li><a href="{{route('projeto.criar')}}"><svg class="crumina-icon">
                                 <use xlink:href="#picture-icon"></use>
                             </svg>Criar Projeto</a></li>
-                    <li><a href="10-profile-dashboard.html"><svg class="crumina-icon">
+                    <li><a href="#"><svg class="crumina-icon">
                                 <use xlink:href="#dashboard-icon"></use>
                             </svg>Meus Projetos</a></li>
-                    <li><a href="14-profile-payment-history.html"><svg class="crumina-icon">
+                    <li><a href="#"><svg class="crumina-icon">
                                 <use xlink:href="#dollar-icon"></use>
                             </svg>Meus Investimentos</a></li>
                     <li><a href="{{ route('usuario.carteira') }}"><svg class="crumina-icon">

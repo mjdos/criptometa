@@ -115,16 +115,16 @@
                                     <li><a href="{{route('projeto.criar')}}"><svg class="crumina-icon">
                                         <use xlink:href="#picture-icon"></use>
                                     </svg>Criar Projeto</a></li>
-                                    <li><a href="10-profile-dashboard.html"><svg class="crumina-icon">
+                                    <li><a href="#"><svg class="crumina-icon">
                                                 <use xlink:href="#dashboard-icon"></use>
                                             </svg>Meus Projetos</a></li>
-                                    <li><a href="14-profile-payment-history.html"><svg class="crumina-icon">
+                                    <li><a href="#"><svg class="crumina-icon">
                                                 <use xlink:href="#dollar-icon"></use>
                                             </svg>Meus Investimentos</a></li>
                                     <li><a href="{{ route('usuario.carteira') }}"><svg class="crumina-icon">
                                                 <use xlink:href="#wallet-icon"></use>
                                             </svg>Minha Carteira</a></li>
-                                    <li class="logout"><a href="#"><svg class="crumina-icon">
+                                    <li class="logout"><a href="{{route('gestao_logout')}}"><svg class="crumina-icon">
                                                 <use xlink:href="#logout-icon"></use>
                                             </svg>Sair</a></li>
                                 </ul>

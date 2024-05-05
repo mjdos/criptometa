@@ -26,6 +26,8 @@
                     <div class="stat-description">Cotação do CCM</div>
                 </div>
             </div>
+            <a class="btn btn-wide btn-dark" href="{{route('site.login')}}">Retirada em R$</a>
+            <a class="btn btn-wide btn-dark" href="{{route('site.login')}}">Comprar CCM</a>
             <!--
             <div class="statement-list">
 
