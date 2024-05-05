@@ -39,144 +39,31 @@
                                 <th scope="col" class="heading-label">Detalhes do projeto</th>
                                 <!-- <th scope="col" class="heading-label">Type</th> -->
                                 <th scope="col" class="heading-label">Carteira</th>
-                                <!-- <th scope="col" class="heading-label">Fee</th>
-                                <th scope="col" class="heading-label">Tax</th>
+                                <th scope="col" class="heading-label"></th>
+                                <!-- <th scope="col" class="heading-label">Tax</th>
                                 <th scope="col" class="heading-label">Earnings</th> -->
                             </tr>
                         </thead>
                         <tbody>
-                            
+                        @foreach ($projetos as $projeto)
                             <tr>
-                                <td >
-                                    <div>{{$projetos->nome}}</div>
+                                <td>{{ $projeto->nome }}</td>
+                                <td>{{ $projeto->descricao}}</td>
+                                <td>{{ $projeto->carteira }}</td>
+                                <td style="padding-right: 0px;">
+                                    <a href=" # "  class="btn btn-fullwidth gradient-background">
+                                    <i class="bi bi-backspace-fill"></i>
+                                        Detalhes
+                                    </a>
                                 </td>
-                                <td data-label="Item details">
-                                    <div class="item-title gradient-text"><a href="05-product.html">Cryptoki NFT
-                                            and Digital Market PSD Template</a>
+                                <!-- <td>
+                                    <div>
+                                    <button class="btn btn-fullwidth  gradient-background" type="submit">fdsa</button>
                                     </div>
-                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
-                                </td>
-                                <!-- <td data-label="type" class="stat-value">Sale</td> -->
-                                <td data-label="price" class="stat-value">$12.00</td>
-                                <!-- <td data-label="fee" class="stat-value">-$1.00</td>
-                                <td data-label="tax" class="stat-value">-$1.00</td>
+                                </td> -->
+                                <!-- <td data-label="tax" class="stat-value">-$1.00</td>
                                 <td data-label="earnings" class="green stat-value">$10.00</td> -->
-                            </tr>
-                            <tr>
-                                <td data-label="Date">
-                                    <div class="date">Jul 16, 2021</div>
-                                </td>
-                                <td data-label="Item details">
-                                    <div class="item-title gradient-text"><a href="05-product.html">Cryptoki NFT
-                                            and Digital Market PSD Template</a>
-                                    </div>
-                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
-                                </td>
-                                <!-- <td data-label="type" class="stat-value">Sale</td> -->
-                                <td data-label="price" class="stat-value">$12.00</td>
-                                <!-- <td data-label="fee" class="stat-value">-$1.00</td>
-                                <td data-label="tax" class="stat-value">-$1.00</td>
-                                <td data-label="earnings" class="green stat-value">$10.00</td> -->
-                            </tr>
-                            <tr>
-                                <td data-label="Date">
-                                    <div class="date">Jul 16, 2021</div>
-                                </td>
-                                <td data-label="Item details">
-                                    <div class="item-title gradient-text"><a href="05-product.html">Add Video
-                                            Reviews to your Theme!</a>
-                                    </div>
-                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
-                                </td>
-                                <td data-label="type" class="stat-value">Purchase</td>
-                                <!-- <td data-label="price" class="stat-value">$17.00</td> -->
-                                <!-- <td data-label="fee" class="stat-value">$0.00</td>
-                                <td data-label="tax" class="stat-value">$0.00</td>
-                                <td data-label="earnings" class="red stat-value">$17.00</td> -->
-                            </tr>
-                            <tr>
-                                <td data-label="Date">
-                                    <div class="date">Jul 14, 2021</div>
-                                </td>
-                                <td data-label="Item details">
-                                    <div class="item-title gradient-text"><a href="05-product.html">Twitter
-                                            Gaming Headers Pack 04</a>
-
-                                    </div>
-                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
-                                </td>
-                                <!-- <td data-label="type" class="stat-value">Sale</td> -->
-                                <td data-label="price" class="stat-value">$8.00</td>
-                                <!-- <td data-label="fee" class="stat-value">-$0.80</td>
-                                <td data-label="tax" class="stat-value">-$0.80</td>
-                                <td data-label="earnings" class="green stat-value">$6.60</td> -->
-                            </tr>
-                            <tr>
-                                <td data-label="Date">
-                                    <div class="date">Jul 14, 2021</div>
-                                </td>
-                                <td data-label="Item details">
-                                    <div class="item-title gradient-text"><a href="05-product.html">Twitter
-                                            Gaming Headers Pack 12</a>
-
-                                    </div>
-                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
-                                </td>
-                                <!-- <td data-label="type" class="stat-value">Sale</td> -->
-                                <td data-label="price" class="stat-value">$8.00</td>
-                                <!-- <td data-label="fee" class="stat-value">-$0.80</td>
-                                <td data-label="tax" class="stat-value">-$0.80</td>
-                                <td data-label="earnings" class="green stat-value">$6.60</td> -->
-                            </tr>
-                            <tr>
-                                <td data-label="Date">
-                                    <div class="date">Jul 13, 2021</div>
-                                </td>
-                                <td data-label="Item details">
-                                    <div class="item-title gradient-text"><a href="05-product.html">Cryptoki NFT
-                                            and Digital Market PSD Template</a>
-                                    </div>
-                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
-                                </td>
-                                <!-- <td data-label="type" class="stat-value">Sale</td> -->
-                                <td data-label="price" class="stat-value">$12.00</td>
-                                <!-- <td data-label="fee" class="stat-value">-$1.00</td>
-                                <td data-label="tax" class="stat-value">-$1.00</td>
-                                <td data-label="earnings" class="green stat-value">$10.00</td> -->
-                            </tr>
-                            <tr>
-                                <td data-label="Date">
-                                    <div class="date">Jul 9, 2021</div>
-                                </td>
-                                <td data-label="Item details">
-                                    <div class="item-title gradient-text"><a href="05-product.html">Twitter
-                                            Gaming Headers Pack 08</a>
-                                    </div>
-                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
-                                </td>
-                                <!-- <td data-label="type" class="stat-value">Sale</td> -->
-                                <td data-label="price" class="stat-value">$8.00</td>
-                                <!-- <td data-label="fee" class="stat-value">-$0.80</td>
-                                <td data-label="tax" class="stat-value">-$0.80</td>
-                                <td data-label="earnings" class="green stat-value">$6.60</td> -->
-                            </tr>
-                            <tr>
-                                <td data-label="Date">
-                                    <div class="date">July 8, 2021</div>
-                                </td>
-                                <td data-label="Item details">
-                                    <div class="item-title gradient-text"><a href="05-product.html">Cryptoki NFT
-                                            and Digital Market PSD Template</a>
-                                    </div>
-                                    <div class="license-details">Regular License - Invoice CRKT12354</div>
-                                </td>
-                                <!-- <td data-label="type" class="stat-value">Sale</td> -->
-                                <td data-label="price" class="stat-value">$12.00</td>
-                                <!-- <td data-label="fee" class="stat-value">-$1.00</td>
-                                <td data-label="tax" class="stat-value">-$1.00</td>
-                                <td data-label="earnings" class="green stat-value">$10.00</td> -->
-                            </tr>
-                            
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
