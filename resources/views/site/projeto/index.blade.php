@@ -47,33 +47,32 @@
                             <div id="tab1" class="tab active">
                                 <div class="tab-content">
                                     <div class="product-description">
-                                        <div class="title h6">Revive your Twitter with Awesome Graphics!</div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor
-                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat.
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                            eu
-                                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                                            in
-                                            culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                                            veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                        <div class="title h6">{{$projeto->nome}}!</div>
+                                        <p>{{$projeto->descricao}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab2" class="tab">
+                                <div class="tab-content">
+                                    <div class="product-description">
+                                        <div class="title h6">Metas!</div>
                                         <ul class="list-line-height">
                                             <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>1500x500 pixels</li>
-                                            <li><svg class="crumina-icon bullet-icon">
+                                                </svg>{{$projeto->meta_1}}</li>
+                                                <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>All free fonts used</li>
-                                            <li><svg class="crumina-icon bullet-icon">
+                                                </svg>{{$projeto->meta_2}}</li>
+                                                <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>PS vectors for easier customization</li>
+                                                </svg>{{$projeto->meta_3}}</li>
+                                                <li><svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>{{$projeto->meta_4}}</li>
+                                                <li><svg class="crumina-icon bullet-icon">
+                                                    <use xlink:href="#circle-icon"></use>
+                                                </svg>{{$projeto->meta_5}}</li>
                                         </ul>
-                                        <p>Remember to follow our <a href="#">profile</a> to know when new items are
-                                            released!</p>
                                     </div>
                                 </div>
                             </div>
