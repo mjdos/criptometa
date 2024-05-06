@@ -36,7 +36,7 @@
                                     <td style="padding-left: 10px;">{{ $projeto->nome }}</td>
                                     <td style="padding-left: 15px;">{{ $projeto->descricao }}</td>
                                     <td>{{ $projeto->carteira }}</td>
-                                    <td>{{ $projeto->created_at }}</td>
+                                    <td>{{ $projeto->created_at->format('d/m/Y') }}</td>
                                     <td style="padding-left: 30px;">
                                         <a   class="btn btn-sm btn-info">
                                             <i class="bi bi-info-circle" style="padding-left: 2px;"></i>
