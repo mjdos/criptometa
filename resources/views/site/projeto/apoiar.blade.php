@@ -15,13 +15,11 @@
                                 <div class="product-in-cart">
                                     <div class="product-info">
                                         <div class="product-thumb">
-                                            <a href="05-product.html">
-                                                <img src="img/proj_{{$projeto->id}}.jpg" alt="">
-                                            </a>
+                                                <img src="{{ url($projeto->imagem)}}" alt="">
                                         </div>
                                         <div class="product-details">
                                             <div class="product-name">
-                                                <a href="05-product.html">{{$projeto->nome}}</a>
+                                                {{$projeto->nome}}
                                             </div>
                                             <div class="license-type">{{$projeto->descricao}}</div>
                                         </div>

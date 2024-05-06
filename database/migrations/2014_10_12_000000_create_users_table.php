@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('carteira');
             $table->string('carteira_id');
             $table->string('projeto_id');
+            $table->string('telefone')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
