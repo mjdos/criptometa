@@ -143,7 +143,7 @@ class SiteController extends Controller
             'valor'             => $request->valor,
         ]);
 
-        return redirect()->route('projeto.explorar');
+        return redirect()->route('apoio.sucess');
     }
 
     public function meus_projetos($id){

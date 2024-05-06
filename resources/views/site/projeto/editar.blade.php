@@ -32,10 +32,10 @@
                 </div>
                 <div class="form-field">
                     <label>Valor para Arrecadar</label>
-                    <input type="number" name="valor">
+                    <input type="number" name="valor" value="50000">
                 </div>
                 <div class="form-field">
-                    <label>1ª Meta</label>
+                    <label> Meta 1º</label>
                     <input type="text" name="meta_1">
                 </div>
 
