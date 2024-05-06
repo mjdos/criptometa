@@ -11,23 +11,6 @@
         <div class="page-title-section">
             <h2><span class="gradient-text">Meus</span> Projetos</h2>
         </div>
-        <!-- <div class="dashboard-wrapper">
-            <div class="user-stats-section">
-                <div class="stat-item">
-                    <div class="stat-number"><font size=4>{{$usuario['carteira'] ?? ''}}</font></div>
-                    <div class="stat-description">Endereço da Carteira</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number green"><font size=4>102 CCM</font></div>
-                    <div class="stat-description">Qtde de Cripto</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number"><font size=4>R$ 1,00</font></div>
-                    <div class="stat-description">Cotação do CCM</div>
-                </div>
-            </div>
-            <a class="btn btn-wide btn-dark" href="{{route('site.login')}}">Retirada em R$</a>
-            <a class="btn btn-wide btn-dark" href="{{route('site.login')}}">Comprar CCM</a> -->
             
             <div class="statement-list">
 
@@ -37,11 +20,8 @@
                             <tr>
                                 <th scope="col" class="heading-label">Nome</th>
                                 <th scope="col" class="heading-label">Data do projeto</th>
-                                <!-- <th scope="col" class="heading-label">Type</th> -->
                                 <th scope="col" class="heading-label">Carteira</th>
                                 <th scope="col" class="heading-label"></th>
-                                <!-- <th scope="col" class="heading-label">Tax</th>
-                                <th scope="col" class="heading-label">Earnings</th> -->
                             </tr>
                         </thead>
                         <tbody>
