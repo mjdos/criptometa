@@ -59,19 +59,19 @@
                                         <ul class="list-line-height">
                                             <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_1}}</li>
+                                                </svg>20% - {{$projeto->meta_1}}</li>
                                                 <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_2}}</li>
+                                                </svg>20% - {{$projeto->meta_2}}</li>
                                                 <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_3}}</li>
+                                                </svg>20% - {{$projeto->meta_3}}</li>
                                                 <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_4}}</li>
+                                                </svg>20% - {{$projeto->meta_4}}</li>
                                                 <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_5}}</li>
+                                                </svg>20% - {{$projeto->meta_5}}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -150,11 +150,11 @@
                     <div class="product-purchase-info">
                         <form class="cryptoki-form" id="purchase-form">
                             <div class="product-price" style="margin-bottom: 0px;">
-                                <div class="price">R${{ number_format($projeto->valor,2,",",".") }} </div>
+                                <div class="price"><font size="5">R$ {{ number_format($projeto->valor,2,",",".") }}</font> </div>
                                 <div class="label">Valor da Meta</div>
                             </div>
                             <div class="product-price">
-                                <div class="price">R${{number_format($valorTotal, 2,",",".")}} </div>
+                                <div class="price"><font size="5">R$ {{number_format($valorTotal, 2,",",".")}}</font></div>
                                 <div class="label">Valor Arrecadado</div>
                             </div>
                             <a  href="{{route('projeto.apoiar', $projeto->id)}}" class="btn btn-fullwidth  gradient-background" type="submit">Apoiar este projeto!</a>
