@@ -54,7 +54,7 @@
                                         <tr>
                                             <td>{{ $investimento->investidor->name }}</td>
                                             <td>{{ $investimento->valor }}</td>
-                                            <td>{{ $investimento->created_at->format('d/m/Y H:i:s') }}</td>
+                                            <td>{{ $investimento->created_at->format('d/m/Y') }}</td>
                                         </tr>
                                     @endforeach
                                 @endif
