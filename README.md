@@ -39,13 +39,14 @@ https://criptometa.com.br/
 <p align="left"><a href="https://github.com/mjdos/criptometa/blob/main/public/lumx-code-creators.pptx">Download da Apresentação em PowerPoint</a></p>
 <br><br>
 
-## 🎞 Vídeos do MVP 
+## 🎞 Vídeos do Pitch e Demo
 
 Preparamos uma série de vídeos para demonstrar a solução funcionando com nosso MVP.
 
 | Descrição | Vídeo |
 | ------ | ------ |
-| Pitch CodeCreators | [video](https://www.youtube.com/watch?v=fGzYUPVvNkI) |
+| Pitch CodeCreators | [video](https://www.youtube.com/watch?v=2IZs9Bo2Mc0) |
+| Demo CodeCreators | [video](https://www.youtube.com/watch?v=YLfua7wBaaE) |
 
 <br>
 
@@ -57,7 +58,7 @@ INCLUIR CHILIZ
 
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=git,github,php,laravel,vscode,linux,nodejs,js,html,jquery,mysql" />
+    <img src="https://skillicons.dev/icons?i=git,github,php,laravel,vscode,linux,html,mysql" />
   </a>
 </p>
 <br>
