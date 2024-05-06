@@ -32,36 +32,36 @@
                 </div>
                 <div class="form-field">
                     <label>Valor para Arrecadar</label>
-                    <input type="number" name="valor">
+                    <input type="number" name="valor" value="1000">
                 </div>
                 <div class="form-field">
-                    <label>1ª Meta</label>
-                    <input type="text" name="meta_1">
-                </div>
-
-                <div class="form-field">
-                    <label>2ª Meta</label>
-                    <input type="text" name="meta_2">
+                    <label> Meta 1</label>
+                    <input type="text" name="meta_1" value="Tela de Login">
                 </div>
 
                 <div class="form-field">
-                    <label>3ª Meta</label>
-                    <input type="text" name="meta_3">
+                    <label>Meta 2</label>
+                    <input type="text" name="meta_2"  value="Tela de Cadastro">
                 </div>
 
                 <div class="form-field">
-                    <label>4ª Meta</label>
-                    <input type="text" name="meta_4">
+                    <label>Meta 3</label>
+                    <input type="text" name="meta_3"  value="Relatórios">
                 </div>
 
                 <div class="form-field">
-                    <label>5ª Meta</label>
-                    <input type="text" name="meta_5">
+                    <label>Meta 4</label>
+                    <input type="text" name="meta_4" value="MVP Completo" >
+                </div>
+
+                <div class="form-field">
+                    <label>Meta 5</label>
+                    <input type="text" name="meta_5" value="Deploy em produção">
                 </div>
 
                 <div class="form-field">
                     <label>Descrição</label>
-                    <textarea name="descricao" cols="30" rows="10"></textarea>
+                    <textarea name="descricao" cols="30" rows="10" value="Descrição do projeto."></textarea>
                 </div>
                 <input class="btn btn-wide gradient-background" type="submit" value="Salvar">
             </div>
