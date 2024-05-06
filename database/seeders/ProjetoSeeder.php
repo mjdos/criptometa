@@ -27,7 +27,7 @@ class ProjetoSeeder extends Seeder
             'meta_3' => 'Workshop',
             'meta_4' => 'Brindes personalizados',
             'meta_5' => 'Acesso a recursos premium',
-            'imagem' =>  'storage/imagemProjetos/img1.jpg',
+            'imagem' =>  'storage/imagemProjetos/img1.png',
             'carteira' => '1.000',
         ]);
 
@@ -55,7 +55,7 @@ class ProjetoSeeder extends Seeder
             'meta_3' => 'Programa de pontos',
             'meta_4' => 'Taxas de juros reduzidas',
             'meta_5' => 'Suporte premium ao cliente',
-            'imagem' =>  'storage/imagemProjetos/img3.jpg',
+            'imagem' =>  'storage/imagemProjetos/img4.jpg',
             'carteira' => '150000',
         ]);
 
@@ -70,7 +70,7 @@ class ProjetoSeeder extends Seeder
             'meta_3' => 'Alcançar alta rentabilidade para os investidores',
             'meta_4' => 'Oferecer acesso a investimentos alternativos de forma simplificada',
             'meta_5' => 'Proporcionar atendimento especializado e personalizado aos clientes',
-            'imagem' =>  'storage/imagemProjetos/img4.jpg',
+            'imagem' =>  'storage/imagemProjetos/img7.png',
             'carteira' => '200000',
         ]);
 
@@ -84,7 +84,7 @@ class ProjetoSeeder extends Seeder
             'meta_3' => 'Entrega rápida e eficiente',
             'meta_4' => 'Interface amigável para pedidos',
             'meta_5' => 'Atendimento ao cliente excepcional',
-            'imagem' =>  'storage/imagemProjetos/img5.jpg',
+            'imagem' =>  'storage/imagemProjetos/img3.png',
             'carteira' => '80000',
         ]);
         
@@ -99,7 +99,7 @@ class ProjetoSeeder extends Seeder
             'meta_3' => 'Avaliação virtual de problemas capilares',
             'meta_4' => 'Agendamento online em salões de beleza parceiros',
             'meta_5' => 'Comunidade engajada de entusiastas de cabelo',
-            'imagem' =>  'storage/imagemProjetos/img6.jpg',
+            'imagem' =>  'storage/imagemProjetos/img5.png',
             'carteira' => '60000',
         ]);
         
@@ -114,7 +114,7 @@ class ProjetoSeeder extends Seeder
             'meta_3' => 'Competições e torneios emocionantes',
             'meta_4' => 'Comunidade de jogadores engajada',
             'meta_5' => 'Suporte técnico eficiente e ágil',
-            'imagem' =>  'storage/imagemProjetos/img7.jpg',
+            'imagem' =>  'storage/imagemProjetos/img6.png',
             'carteira' => '120000',
         ]);
         
