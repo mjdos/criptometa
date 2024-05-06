@@ -115,9 +115,11 @@ class SiteController extends Controller
         $nova_carteira = $lumx->criarCarteira();
 
         if ($request->file('imagem')->isValid()) {
-            $path = $request->file('imagem')->store('storage/imagemProjetos');
-            $imagem_1 =  $path;
+            $path = $request->file('imagem')->store('public/imagemProjetos');
+            $path = explode('public/', $path);
+            $imagem_1 =  'storage/'.$path[1];
         }
+        
         $usuario = Session::get('usuario');
         Projetos::create([
             'autor_id'      => $usuario['id'],
