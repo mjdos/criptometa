@@ -36,7 +36,7 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="heading-label">Nome</th>
-                                <th scope="col" class="heading-label">Detalhes do projeto</th>
+                                <th scope="col" class="heading-label">Data do projeto</th>
                                 <!-- <th scope="col" class="heading-label">Type</th> -->
                                 <th scope="col" class="heading-label">Carteira</th>
                                 <th scope="col" class="heading-label"></th>
@@ -48,7 +48,7 @@
                             @foreach ($projetos as $projeto)
                                 <tr>
                                     <td>{{ $projeto->nome }}</td>
-                                    <td>{{ $projeto->descricao}}</td>
+                                    <td>{{ $projeto->created_at->format('d/m/Y') }}</td>
                                     <td>{{ $projeto->carteira }}</td>
                                     <td style="padding-right: 0px;">
                                         <a href="{{ route('projeto.index', $projeto->id) }}"  class="btn btn-fullwidth gradient-background">
@@ -56,13 +56,6 @@
                                             Detalhes
                                         </a>
                                     </td>
-                                    <!-- <td>
-                                        <div>
-                                        <button class="btn btn-fullwidth  gradient-background" type="submit">fdsa</button>
-                                        </div>
-                                    </td> -->
-                                    <!-- <td data-label="tax" class="stat-value">-$1.00</td>
-                                    <td data-label="earnings" class="green stat-value">$10.00</td> -->
                                 </tr>
                             @endforeach
                         </tbody>

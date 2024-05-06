@@ -5,7 +5,7 @@
 		<div class="aside-logo py-8" id="kt_aside_logo"  style="background-color: white;">
 			<!--begin::Logo-->
 			<a href="{{ route('home.index') }}" class="d-flex align-items-center">
-				<img alt="Logo" src="{{ url('assets/img/favicon02.png') }}" class="h-100px logo" />
+				<img alt="Logo" src="{{ url('assets/img/fav02.png') }}" class="h-100px logo" />
 			</a>
 			<!--end::Logo-->
 		</div>
