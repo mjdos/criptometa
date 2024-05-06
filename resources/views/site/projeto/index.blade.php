@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="product-image">
-                    <img src="img/proj_{{$projeto->id}}.jpg" style="height: 700px;" alt="Product Image">
+                    <img src="{{url($projeto->imagem)}}" style="height: 700px;" alt="Product Image">
                 </div>
                 <div class="product-info">
                     <div class="tabs-block swiper-container">
@@ -33,7 +33,7 @@
                             <li class="swiper-slide active">
                                 <a href="#tab1">Descrição</a>
                             </li>
-                            {{-- <li class="swiper-slide">
+                            <li class="swiper-slide">
                                 <a href="#tab2">Metas<span class="count">5</span></a>
                             </li>
                             <li class="swiper-slide">
@@ -41,31 +41,39 @@
                             </li>
                             <li class="swiper-slide">
                                 <a href="#tab5">Apoiadores<span class="count">{{ count($apoiadores)}}</span></a>
-                            </li> --}}
+                            </li>
                         </ul>
                         <div class="tabs-content-wrapper">
                             <div id="tab1" class="tab active">
                                 <div class="tab-content">
                                     <div class="product-description">
-                                        <div class="title h6">{{$projeto->descricao}}</div>
+                                        <div class="title h6">Revive your Twitter with Awesome Graphics!</div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor
+                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat.
+                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                                            eu
+                                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                                            in
+                                            culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                                            veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                                         <ul class="list-line-height">
                                             <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_1}}</li>
+                                                </svg>1500x500 pixels</li>
                                             <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_2}}</li>
+                                                </svg>All free fonts used</li>
                                             <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_3}}</li>
-                                                <li><svg class="crumina-icon bullet-icon">
-                                                    <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_4}}</li>
-                                                <li><svg class="crumina-icon bullet-icon">
-                                                    <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_5}}</li>
+                                                </svg>PS vectors for easier customization</li>
                                         </ul>
-
+                                        <p>Remember to follow our <a href="#">profile</a> to know when new items are
+                                            released!</p>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +151,7 @@
                     <div class="product-purchase-info">
                         <form class="cryptoki-form" id="purchase-form">
                             <div class="product-price">
-                                <div class="price">R${{$projeto->carteira}} </div>
+                                <div class="price">R${{$projeto->valor}} </div>
                                 <div class="label">Valor da Meta</div>
                             </div>
                             <a  href="{{route('projeto.apoiar', $projeto->id)}}" class="btn btn-fullwidth  gradient-background" type="submit">Apoiar este projeto!</a>
@@ -160,7 +168,7 @@
                             </ul>
                             <ul class="details-value">
                                 <li>{{date('d/m/Y', strtotime($projeto->created_at))}}</li>
-                             
+                                <li>Colocar o tipo do projeto</li>
                             </ul>
                         </div>
                     </div>

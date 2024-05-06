@@ -14,68 +14,41 @@
                         <div class="featured-item v5">
                             <div class="featured-item-wrapper">
                                 <div class="featured-item-content">
-                                    <a href="{{route('projeto.apoiar', $projeto->id)}}"> <div class="fav-counter"><svg class="crumina-icon">
-                                          
-                                        </svg><span class="count">Apoie esse projeto!</span></div></a>
                                     <div class="featured-item-image">
-                                        <a href="{{ route('projeto.index', $projeto->id) }}">
-                                            <img src="img/proj_{{$projeto->id}}.jpg" alt=""></a>
+                                        <a href="{{route('projeto.index', $projeto->id) }}">
+                                            <img src="{{ url($projeto->imagem)}}" alt="">
+                                        </a>
                                     </div>
-                                    <div class="featured-item-info">
-                                        <div class="title"><a href="{{ route('projeto.index', $projeto->id) }}">{{$projeto->nome}}</a>
+                                    <a href="{{route('projeto.apoiar', $projeto->id)}}">
+                                        <div class="fav-counter"><svg class="crumina-icon"></svg>
+                                            <span class="count">Apoie esse projeto!</span>
                                         </div>
-                                        <div class="item-meta"><span class="avatar box-26"><a
-                                                    href="/cryptoki-html/"><img src="img/avatar.png" alt=""></a><span
-                                                    class="verified"><svg class="crumina-icon">
-                                                        <use xlink:href="#check-icon"></use>
-                                                    </svg></span></span> <span>@</span>{{$projeto->autor->name}}</div>
+                                    </a>
+                                    <div class="featured-item-info">
+                                        <div class="title">
+                                            <a href="{{ route('projeto.index', $projeto->id) }}">{{$projeto->nome}}</a>
+                                        </div>
+                                        <div class="item-meta">
+                                            <span class="avatar box-26">
+                                                <img src="img/avatar.png" alt="">
+                                            </span>
+                                            <span>@</span>{{$projeto->autor->name}}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="featured-item-post-content">
-                                    <div class="item-rating">
-                                        @php
-                                            $filledStars = $projeto->rating; // Número aleatório de estrelas preenchidas (vindo do modelo)
-                                            $emptyStars = 5 - $filledStars; // Calcula o número de estrelas vazias
-                                        @endphp
-                                
-                                        @for ($i = 0; $i < $filledStars; $i++)
-                                            <span class="filled">
-                                                <svg class="crumina-icon">
-                                                    <use xlink:href="#star2-icon"></use>
-                                                </svg>
-                                            </span>
-                                        @endfor
-                                
-                                        @for ($i = 0; $i < $emptyStars; $i++)
-                                            <span>
-                                                <svg class="crumina-icon">
-                                                    <use xlink:href="#star2-icon"></use>
-                                                </svg>
-                                            </span>
-                                        @endfor
+                                    <div class="header-user-profile cryptoki-notif-bttn">
+                                        <a class="btn btn-wide btn-dark" href="{{route('projeto.index', $projeto->id)}}">Detalhes do projeto!</a>
                                     </div>
-                                    <div class="item-price">${{$projeto->carteira}}</div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
                     </div>
                 </div>
-                <!--   item version 06 -->
-                    <div class="pagination-section flex-center">
-                        <ul class="pagination-list">
-                            <li class="page-item page-nav-prev"><a href="#">Prev</a></li>
-                            <li class="page-item"><a href="#">01</a></li>
-                            <li class="page-item"><a href="#">02</a></li>
-                            <li class="page-item"><a href="#">03</a></li>
-                            <li class="page-item page-more-link"><a href="#">...</a></li>
-                            <li class="page-item"><a href="#">16</a></li>
-                            <li class="page-item page-nav-next"><a href="#">Next</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
             </div>
+                
+        </div>
         </div>
         <!-- main content area -->
         @include('site.layouts.footer')

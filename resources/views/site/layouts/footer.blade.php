@@ -1,4 +1,7 @@
         <!--Footer area-->
+        @php
+        $usuario = Session::get('usuario');
+        @endphp
         <footer class="footer footer-margin">
             <div class="footer-wrapper container">
 
@@ -20,7 +23,23 @@
                                 </li>
                             </ul>
                             <ul class="footer-menu">
+                                <li class="menu-item"><a class="menu-link" href="{{route('quemsomos')}}">Quem Somos</a></li>
+                            </ul>
+
+                            <ul class="footer-menu">
                                 <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
+                            </ul>
+
+                            <ul class="footer-menu">
+                                @if(isset($usuario))
+                                <li class="menu-item"><a class="menu-link" href="{{route('projeto.criar')}}">Criar Projeto</a></li>
+                                @else
+                                <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Criar Projeto</a></li>
+                                @endif
+                            </ul>
+
+                            <ul class="footer-menu">
+                                <li class="menu-item"><a class="menu-link" href="{{route('contato')}}">Contato</a></li>
                             </ul>
                         </div>
                     </div>

@@ -69,3 +69,6 @@ require __DIR__.'/painel.php';
     //Quem Somos
     Route::get('/quem-somos', function () {return view('site.quem-somos');})->name('quemsomos');
     Route::get('/contato', function () {return view('site.contato');})->name('contato');
+
+      //Tela sucesso apoio
+      Route::get('/apoio-sucess', function () {return view('site.projeto.sucessoApoio');})->name('apoio.sucess');
