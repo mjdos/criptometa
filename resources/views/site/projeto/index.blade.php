@@ -149,12 +149,12 @@
                     
                     <div class="product-purchase-info">
                         <form class="cryptoki-form" id="purchase-form">
-                            <div class="product-price">
-                                <div class="price">R${{$projeto->valor}} </div>
+                            <div class="product-price" style="margin-bottom: 0px;">
+                                <div class="price">R${{ number_format($projeto->valor,2,",",".") }} </div>
                                 <div class="label">Valor da Meta</div>
                             </div>
                             <div class="product-price">
-                                <div class="price">R${{$valorTotal}} </div>
+                                <div class="price">R${{number_format($valorTotal, 2,",",".")}} </div>
                                 <div class="label">Valor Arrecadado</div>
                             </div>
                             <a  href="{{route('projeto.apoiar', $projeto->id)}}" class="btn btn-fullwidth  gradient-background" type="submit">Apoiar este projeto!</a>
