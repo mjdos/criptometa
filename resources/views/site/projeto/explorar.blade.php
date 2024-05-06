@@ -16,7 +16,7 @@
                                 <div class="featured-item-content">
                                     <div class="featured-item-image">
                                         <a href="{{route('projeto.index', $projeto->id) }}">
-                                            <img src="{{ url($projeto->imagem)}}" alt="" height="240">
+                                            <img src="{{ url($projeto->imagem)}}" alt="">
                                         </a>
                                     </div>
                                     <a href="{{route('projeto.apoiar', $projeto->id)}}">
