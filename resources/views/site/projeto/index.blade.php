@@ -59,19 +59,19 @@
                                         <ul class="list-line-height">
                                             <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_1}}</li>
+                                                </svg>20% - {{$projeto->meta_1}}</li>
                                                 <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_2}}</li>
+                                                </svg>20% - {{$projeto->meta_2}}</li>
                                                 <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_3}}</li>
+                                                </svg>20% - {{$projeto->meta_3}}</li>
                                                 <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_4}}</li>
+                                                </svg>20% - {{$projeto->meta_4}}</li>
                                                 <li><svg class="crumina-icon bullet-icon">
                                                     <use xlink:href="#circle-icon"></use>
-                                                </svg>{{$projeto->meta_5}}</li>
+                                                </svg>20% - {{$projeto->meta_5}}</li>
                                         </ul>
                                     </div>
                                 </div>
