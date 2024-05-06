@@ -63,10 +63,17 @@ INCLUIR CHILIZ
 </p>
 <br>
 
-## ⚙️ Contrato Inteligente 
-O contrato inteligente para criação e gerenciamento do Token está na pasta "contrato-solidity" e está documentado.<br>
+## ⚙️ Painel de Administração
 
-<p align="center"><a href="https://github.com/mjdos/tesouro_direto/blob/main/contrato-solidity/contracts/TesouroDireto.sol">https://github.com/mjdos/tesouro_direto/blob/main/contrato-solidity/contracts/TesouroDireto.sol</a></p>
+Criamos um painel de administração da plataforma para gerenciar os usuários e projetos.<br>
+
+
+<p align="center"><img src="https://github.com/mjdos/criptometa/blob/main/public/painel/tela1.png" width="700" alt="CriptoMeta" border="1"></p>
+<p align="center"><img src="https://github.com/mjdos/criptometa/blob/main/public/painel/tela2.png" width="700" alt="CriptoMeta" border="1"></p>
+<p align="center"><img src="https://github.com/mjdos/criptometa/blob/main/public/painel/tela3.png" width="700" alt="CriptoMeta" border="1"></p>
+<p align="center"><img src="https://github.com/mjdos/criptometa/blob/main/public/painel/tela4.png" width="700" alt="CriptoMeta" border="1"></p>
+<p align="center"><img src="https://github.com/mjdos/criptometa/blob/main/public/painel/tela5.png" width="700" alt="CriptoMeta" border="1"></p>
+
 <br>
 
 
