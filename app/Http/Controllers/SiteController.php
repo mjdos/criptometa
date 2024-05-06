@@ -153,6 +153,13 @@ class SiteController extends Controller
         return view('site.usuario.meus_projetos', compact('projetos'));
     }    
 
+    public function meus_investimentos($id){
+        
+        $investimentos = Investimentos::where('investidor_id', $id)->get();
+
+        return view('site.meus_investimentos', compact('investimentos'));
+    }
+
     public function showProjetos(Request $request)
     {
 

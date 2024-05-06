@@ -9,7 +9,7 @@
 
     <div class="main-content-area sales-statement">
         <div class="page-title-section">
-            <h2><span class="gradient-text">Meus</span> Projetos</h2>
+            <h2><span class="gradient-text">Meus</span> Investimentos</h2>
         </div>
         <!-- <div class="dashboard-wrapper">
             <div class="user-stats-section">
@@ -36,36 +36,29 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="heading-label">Nome</th>
-                                <th scope="col" class="heading-label">Detalhes do projeto</th>
+                                <th scope="col" class="heading-label">Valor investido</th>
                                 <!-- <th scope="col" class="heading-label">Type</th> -->
-                                <th scope="col" class="heading-label">Carteira</th>
+                                <th scope="col" class="heading-label">Data do investimento</th>
                                 <th scope="col" class="heading-label"></th>
                                 <!-- <th scope="col" class="heading-label">Tax</th>
                                 <th scope="col" class="heading-label">Earnings</th> -->
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($projetos as $projeto)
-                                <tr>
-                                    <td>{{ $projeto->nome }}</td>
-                                    <td>{{ $projeto->descricao}}</td>
-                                    <td>{{ $projeto->carteira }}</td>
-                                    <td style="padding-right: 0px;">
-                                        <a href="{{ route('projeto.index', $projeto->id) }}"  class="btn btn-fullwidth gradient-background">
-                                        <i class="bi bi-backspace-fill"></i>
-                                            Detalhes
-                                        </a>
-                                    </td>
-                                    <!-- <td>
-                                        <div>
-                                        <button class="btn btn-fullwidth  gradient-background" type="submit">fdsa</button>
-                                        </div>
-                                    </td> -->
-                                    <!-- <td data-label="tax" class="stat-value">-$1.00</td>
-                                    <td data-label="earnings" class="green stat-value">$10.00</td> -->
-                                </tr>
-                            @endforeach
-                        </tbody>
+                                @if ($investimentos->isEmpty())
+                                    <tr>
+                                        <td >Você ainda não possui investimentos.</td>
+                                    </tr>
+                                @else
+                                    @foreach ($investimentos as $investimento)
+                                        <tr>
+                                            <td>{{ $investimento->investidor->name }}</td>
+                                            <td>{{ $investimento->valor }}</td>
+                                            <td>{{ $investimento->created_at->format('d/m/Y H:i:s') }}</td>
+                                        </tr>
+                                    @endforeach
+                                @endif
+                            </tbody>
                     </table>
                 </div>
             </div>
