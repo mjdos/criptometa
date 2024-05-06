@@ -54,7 +54,11 @@ Preparamos uma série de vídeos para demonstrar a solução funcionando com nos
 
 Abaixo as ferramentas e tecnologias que foram utilizadas no nosso projeto.
 
-INCLUIR CHILIZ
+| Principais Tecnologias |
+| ------ |
+| Laravel |
+| LUMX |
+| Chiliz |
 
 <p align="left">
   <a href="https://skillicons.dev">
@@ -75,9 +79,6 @@ Criamos um painel de administração da plataforma para gerenciar os usuários e
 <p align="center"><img src="https://github.com/mjdos/criptometa/blob/main/public/painel/tela5.png" width="700" alt="CriptoMeta" border="1"></p>
 
 <br>
-
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
