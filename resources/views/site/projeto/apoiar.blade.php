@@ -15,7 +15,7 @@
                                 <div class="product-in-cart">
                                     <div class="product-info">
                                         <div class="product-thumb">
-                                                <img src="{{ url($projeto->imagem)}}" alt="">
+                                            <img src="{{ url($projeto->imagem)}}" alt="">
                                         </div>
                                         <div class="product-details">
                                             <div class="product-name">
@@ -24,8 +24,9 @@
                                             <div class="license-type">{{$projeto->descricao}}</div>
                                         </div>
                                     </div>
-                                    <div class="product-price">R${{$projeto->carteira}}</div>
+                                    
                                 </div>
+                                <div class="product-price">Carteira do Projeto: {{$projeto->carteira}}</div>
                             </div>
                             <div class="payment-method-section">
                                 <div class="total-price-details">

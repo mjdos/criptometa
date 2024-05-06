@@ -154,6 +154,10 @@ class SiteController extends Controller
     public function investir(Request $request, $id){
         
         $usuario = Session::get('usuario');
+
+        $lumx = new ApiLumxController;
+        $mint = $lumx->mintToken($usuario['address'], $request->valor);
+
         Investimentos::create([
             'investidor_id'     => $usuario['id'],
             'projeto_id'        => $id,
