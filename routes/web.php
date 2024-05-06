@@ -16,6 +16,7 @@ require __DIR__.'/painel.php';
     //pagina cadastro
     Route::get('/cadastro', [SiteController::class,'cadastro'])->name('site.cadastro');
     Route::post('/cadastro', [SiteController::class,'cadastroStore'])->name('cadastro.store');
+    Route::post('/cadastroEditar', [SiteController::class,'updateCadastro'])->name('cadastro.update');
 
     // projeto
     Route::get('/projeto-index-{id}', [SiteController::class, 'projetoIndex'])->name('projeto.index');

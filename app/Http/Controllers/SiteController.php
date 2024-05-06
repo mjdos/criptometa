@@ -58,6 +58,23 @@ class SiteController extends Controller
         return view('site.cadastro');
     }
 
+    public function updateCadastro(Request $request)
+    {
+        $usuario = Session::get('usuario');
+        $user = User::find($usuario['id']);
+        if($usuario){
+            $dados = [
+
+                'name'          => $request->usuario,
+                'telefone'      => $request->telefone,
+                'senha'         => bcrypt($request->senha),
+            ];
+
+            $user->update($dados);
+        }
+        return view('site.usuario.index');
+    }
+
     public function cadastroStore(Request $request)
     {
 
@@ -71,7 +88,7 @@ class SiteController extends Controller
             'carteira_id'   => $nova_carteira['id'],
             'projeto_id'    => $nova_carteira['projectId'],
             'email'         => $request->email,
-            'password'      => $request->senha,
+            'password'      => bcrypt($request->senha),
 
         ]);
 
