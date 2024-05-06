@@ -154,6 +154,10 @@
                                 <div class="price">R${{$projeto->valor}} </div>
                                 <div class="label">Valor da Meta</div>
                             </div>
+                            <div class="product-price">
+                                <div class="price">R${{$valorTotal}} </div>
+                                <div class="label">Valor Arrecadado</div>
+                            </div>
                             <a  href="{{route('projeto.apoiar', $projeto->id)}}" class="btn btn-fullwidth  gradient-background" type="submit">Apoiar este projeto!</a>
                         </form>
                     </div>
