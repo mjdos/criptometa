@@ -158,12 +158,13 @@ class SiteController extends Controller
         $usuario = Session::get('usuario');
 
         $lumx = new ApiLumxController;
-        $mint = $lumx->mintToken($usuario['address'], $request->valor);
+        $mint = $lumx->mintToken($usuario['carteira_id'], $request->valor);
 
         Investimentos::create([
             'investidor_id'     => $usuario['id'],
             'projeto_id'        => $id,
             'valor'             => $request->valor,
+            'hash_transacao'    => $mint['id']
         ]);
 
         return redirect()->route('apoio.sucess');

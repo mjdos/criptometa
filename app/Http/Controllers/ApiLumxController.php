@@ -49,10 +49,8 @@ class ApiLumxController extends Controller
         $dadosMint = json_encode([
             "contractId" => 'cccc7277-9145-4b97-9195-dfa54ed416de',
             "walletId" => $address,
-            "quantity" => $quantity
+            "quantity" => (int)$quantity
         ]);
-        
-        dd($dadosMint);
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://protocol-sandbox.lumx.io/v2/transactions/mints",
@@ -64,7 +62,9 @@ class ApiLumxController extends Controller
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $dadosMint,
             CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer ' . $token
+                'Content-Type: application/json',
+                'Authorization: Bearer ' . $token,
+                "Content-Length: " . strlen($dadosMint)
             ),
         ));
         $response = curl_exec($curl);
