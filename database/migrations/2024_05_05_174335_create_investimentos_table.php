@@ -22,6 +22,7 @@ return new class extends Migration
                 ->references('id')
                 ->on('projetos');
             $table->integer('valor')->unsigned();
+            $table->string('hash_transacao')->nullable();
             $table->timestamps();
         });
     }

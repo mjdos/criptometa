@@ -15,6 +15,7 @@ class Investimentos extends Model
         'valor',
         'investidor_id',
         'projeto_id',
+        'hash_transacao'
     ];
 
     public function investidor()

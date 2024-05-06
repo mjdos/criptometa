@@ -12,7 +12,7 @@
             <div class="bc-button"><a class="btn btn-wide btn-dark" href="{{route('projeto.explorar')}}">Ver Mais!</a>
             </div>
         </div>
-        <div class="bc-image"><img src="img/content/creators/become-creator-2.png" alt=""></div>
+        <div class="bc-image"><img src="img/sucesso.png" alt=""></div>
     </div>
 
 

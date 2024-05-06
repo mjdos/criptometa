@@ -100,8 +100,14 @@ class SiteController extends Controller
 
         $projeto = Projetos::find($id);
         $apoiadores = Investimentos::where('projeto_id', $id)->get();
+        $valoresArrecadado = Investimentos::where('projeto_id', $id)->get();
+        $valorTotal = 0;
+        foreach($valoresArrecadado as $valorArrecadado){
 
-        return view('site.projeto.index', compact('projeto', 'apoiadores'));
+            $valorTotal = $valorTotal + $valorArrecadado->valor;
+        }
+
+        return view('site.projeto.index', compact('projeto', 'apoiadores','valorTotal'));
     }
 
     public function projetoCriar()
@@ -115,9 +121,11 @@ class SiteController extends Controller
         $nova_carteira = $lumx->criarCarteira();
 
         if ($request->file('imagem')->isValid()) {
-            $path = $request->file('imagem')->store('storage/imagemProjetos');
-            $imagem_1 =  $path;
+            $path = $request->file('imagem')->store('public/imagemProjetos');
+            $path = explode('public/', $path);
+            $imagem_1 =  'storage/'.$path[1];
         }
+        
         $usuario = Session::get('usuario');
         Projetos::create([
             'autor_id'      => $usuario['id'],
@@ -147,17 +155,22 @@ class SiteController extends Controller
     }
 
     public function apoiar($id){
-        $projeto = Projetos::find($id);
+        $projeto = Projetos::find($id);      
         return view('site.projeto.apoiar', compact('projeto'));
     }
 
     public function investir(Request $request, $id){
         
         $usuario = Session::get('usuario');
+
+        $lumx = new ApiLumxController;
+        $mint = $lumx->mintToken($usuario['carteira_id'], $request->valor);
+
         Investimentos::create([
             'investidor_id'     => $usuario['id'],
             'projeto_id'        => $id,
             'valor'             => $request->valor,
+            'hash_transacao'    => $mint['id']
         ]);
 
         return redirect()->route('apoio.sucess');
