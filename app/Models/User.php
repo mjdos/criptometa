@@ -23,6 +23,7 @@ class User extends Authenticatable
         'carteira',
         'carteira_id',
         'projeto_id',
+        'telefone',
         'email',
         'password',
     ];

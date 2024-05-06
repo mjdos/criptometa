@@ -16,6 +16,7 @@ require __DIR__.'/painel.php';
     //pagina cadastro
     Route::get('/cadastro', [SiteController::class,'cadastro'])->name('site.cadastro');
     Route::post('/cadastro', [SiteController::class,'cadastroStore'])->name('cadastro.store');
+    Route::post('/cadastroEditar', [SiteController::class,'updateCadastro'])->name('cadastro.update');
 
     // projeto
     Route::get('/projeto-index-{id}', [SiteController::class, 'projetoIndex'])->name('projeto.index');
@@ -44,6 +45,10 @@ require __DIR__.'/painel.php';
     
     //meus projetos
     Route::get('/meus-projetos-{id}', [SiteController::class, 'meus_projetos'])->name('meus_projetos');
+
+    //meus investimentos
+    Route::get('/meus-investimentos-{id}', [SiteController::class, 'meus_investimentos'])->name('meus_investimentos');
+
 
     //projetos usuario
     Route::get('/projeto_usuario-{id}', [SiteController::class, 'projeto_usuario'])->name('projeto_usuario');

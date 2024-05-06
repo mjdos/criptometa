@@ -16,4 +16,11 @@ class Investimentos extends Model
         'investidor_id',
         'projeto_id',
     ];
+
+    public function investidor()
+    {
+        return $this->belongsTo(User::class, 'investidor_id');
+    }
+
+
 }
