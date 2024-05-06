@@ -19,7 +19,7 @@ class ProjetoSeeder extends Seeder
 
         Projetos::create([
             'nome' => 'CriptoMoeda',
-            'autor_id' => '1',
+            'autor_id' => 2,
             'descricao' => 'O projeto visa a criação de CriptoMoedas',
             'valor' => 20000,
             'meta_1' => 'Acesso ao Beta',
@@ -27,13 +27,13 @@ class ProjetoSeeder extends Seeder
             'meta_3' => 'Workshop',
             'meta_4' => 'Brindes personalizados',
             'meta_5' => 'Acesso a recursos premium',
-            'imagem' =>  'storage/imagemProjeto/proj_1.jpg',
+            'imagem' =>  'storage/imagemProjetos/img1.jpg',
             'carteira' => '1.000',
         ]);
 
         Projetos::create([
-            'nome' => 'Startup',
-            'autor_id' => '1',
+            'nome' => 'EvoBank',
+            'autor_id' => 2,
             'descricao' => 'Startup de bancaria',
             'valor' => 10000,
             'meta_1' => 'Cashback',
@@ -41,13 +41,13 @@ class ProjetoSeeder extends Seeder
             'meta_3' => 'Pontos de recompensas',
             'meta_4' => 'Juros reduzidos',
             'meta_5' => 'Suporte Premium',
-            'imagem' =>   'storage/imagemProjeto/proj_2.jpg',
+            'imagem' =>  'storage/imagemProjetos/img2.jpg',
             'carteira' => '100.000',
         ]);
 
         Projetos::create([
-            'nome' => 'Startup 1',
-            'autor_id' => 1,
+            'nome' => 'PrimeWave Bank',
+            'autor_id' => 3,
             'descricao' => 'Startup de banco digital',
             'valor' => 15000,
             'meta_1' => 'Cashback em compras',
@@ -55,68 +55,68 @@ class ProjetoSeeder extends Seeder
             'meta_3' => 'Programa de pontos',
             'meta_4' => 'Taxas de juros reduzidas',
             'meta_5' => 'Suporte premium ao cliente',
-            'imagem' => 'storage/imagemProjeto/proj_3.jpg',
+            'imagem' =>  'storage/imagemProjetos/img3.jpg',
             'carteira' => '150000',
         ]);
 
         // Exemplo 2
         Projetos::create([
-            'nome' => 'Startup 2',
-            'autor_id' => 1,
-            'descricao' => 'Plataforma de investimentos online',
+            'nome' => 'Investech',
+            'autor_id' => 4,
+            'descricao' => 'Plataforma de investimentos online com foco em inovação tecnológica',
             'valor' => 18000,
-            'meta_1' => 'Diversificação de carteira',
-            'meta_2' => 'Análise de mercado em tempo real',
-            'meta_3' => 'Alta rentabilidade',
-            'meta_4' => 'Acesso a investimentos alternativos',
-            'meta_5' => 'Atendimento especializado',
-            'imagem' =>  'storage/imagemProjeto/proj4_.jpg',
+            'meta_1' => 'Desenvolvimento de algoritmos de diversificação de carteira',
+            'meta_2' => 'Implementação de análise de mercado em tempo real',
+            'meta_3' => 'Alcançar alta rentabilidade para os investidores',
+            'meta_4' => 'Oferecer acesso a investimentos alternativos de forma simplificada',
+            'meta_5' => 'Proporcionar atendimento especializado e personalizado aos clientes',
+            'imagem' =>  'storage/imagemProjetos/img4.jpg',
             'carteira' => '200000',
         ]);
 
-        // Exemplo 3
         Projetos::create([
-            'nome' => 'Startup 3',
-            'autor_id' => 1,
-            'descricao' => 'Plataforma de empréstimos peer-to-peer',
-            'valor' => 5000,
-            'meta_1' => 'Facilidade de empréstimo',
-            'meta_2' => 'Taxas competitivas',
-            'meta_3' => 'Avaliação de crédito automatizada',
-            'meta_4' => 'Processo rápido e transparente',
-            'meta_5' => 'Segurança dos dados',
-            'imagem' =>  'storage/imagemProjeto/proj_5.jpg',
-            'carteira' => '120000',
-        ]);
-
-        // Exemplo 4
-        Projetos::create([
-            'nome' => 'Startup 4',
-            'autor_id' => 1,
-            'descricao' => 'Plataforma de gestão financeira pessoal',
-            'valor' => 2000,
-            'meta_1' => 'Orçamento e controle de gastos',
-            'meta_2' => 'Investimentos automatizados',
-            'meta_3' => 'Planejamento financeiro',
-            'meta_4' => 'Alertas de vencimentos e pagamentos',
-            'meta_5' => 'Segurança dos dados pessoais',
-            'imagem' => 'storage/imagemProjeto/proj_6.jpg',
+            'nome' => 'FoodFusion',
+            'autor_id' => 2,
+            'descricao' => 'Plataforma de entrega de comida fusion',
+            'valor' => 10000,
+            'meta_1' => 'Variedade de pratos fusion',
+            'meta_2' => 'Qualidade dos ingredientes',
+            'meta_3' => 'Entrega rápida e eficiente',
+            'meta_4' => 'Interface amigável para pedidos',
+            'meta_5' => 'Atendimento ao cliente excepcional',
+            'imagem' =>  'storage/imagemProjetos/img5.jpg',
             'carteira' => '80000',
         ]);
+        
 
-        // Exemplo 5
         Projetos::create([
-            'nome' => 'Startup 5',
-            'autor_id' => 1,
-            'descricao' => 'Plataforma de educação financeira',
-            'valor' => 25000,
-            'meta_1' => 'Cursos online sobre finanças',
-            'meta_2' => 'Ferramentas interativas de aprendizado',
-            'meta_3' => 'Consultoria personalizada',
-            'meta_4' => 'Dicas e conteúdos exclusivos',
-            'meta_5' => 'Comunidade de usuários',
-            'imagem' =>  'storage/imagemProjeto/proj_8.jpg',
-            'carteira' => '100000',
+            'nome' => 'HairHub',
+            'autor_id' => 3,
+            'descricao' => 'Plataforma de cuidados e gestão de cabelos',
+            'valor' => 15000,
+            'meta_1' => 'Dicas personalizadas de cuidados capilares',
+            'meta_2' => 'Produtos recomendados para cada tipo de cabelo',
+            'meta_3' => 'Avaliação virtual de problemas capilares',
+            'meta_4' => 'Agendamento online em salões de beleza parceiros',
+            'meta_5' => 'Comunidade engajada de entusiastas de cabelo',
+            'imagem' =>  'storage/imagemProjetos/img6.jpg',
+            'carteira' => '60000',
         ]);
+        
+
+        Projetos::create([
+            'nome' => 'GameWorld',
+            'autor_id' => 4,
+            'descricao' => 'Plataforma de jogos online e interativos',
+            'valor' => 35000,
+            'meta_1' => 'Catálogo diversificado de jogos para todas as idades',
+            'meta_2' => 'Experiência imersiva e interativa',
+            'meta_3' => 'Competições e torneios emocionantes',
+            'meta_4' => 'Comunidade de jogadores engajada',
+            'meta_5' => 'Suporte técnico eficiente e ágil',
+            'imagem' =>  'storage/imagemProjetos/img7.jpg',
+            'carteira' => '120000',
+        ]);
+        
     }
 }
