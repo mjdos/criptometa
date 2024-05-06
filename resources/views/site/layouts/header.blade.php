@@ -122,7 +122,7 @@
                                     <!-- <li><a href="{{route('usuario.projetos')}}"><svg class="crumina-icon"> -->
                                                 <use xlink:href="#dashboard-icon"></use>
                                             </svg>Meus Projetos</a></li>
-                                    <li><a href="#"><svg class="crumina-icon">
+                                    <li><a href="{{  route('meus_investimentos', $usuario['id'])}}"><svg class="crumina-icon">
                                                 <use xlink:href="#dollar-icon"></use>
                                             </svg>Meus Investimentos</a></li>
                                     <li><a href="{{ route('usuario.carteira') }}"><svg class="crumina-icon">
