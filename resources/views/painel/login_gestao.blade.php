@@ -40,7 +40,7 @@
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
-                        <span><img src="{{ url ('assets/img/fav02.png') }}" width="200px" /></span>
+                        <span><img src="{{ url ('assets/img/fav02.png') }}" width="100px" /></span>
                         @if($errors->all())
                             @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger" role="alert">

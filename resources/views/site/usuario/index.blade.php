@@ -13,14 +13,15 @@
         </div>
         <div class="user-db-content-area">
             <form action="{{route('cadastro.update')}}" method="post" class="cryptoki-form" id="personal-info-form">
+                @csrf
                 <div class="form-group">
                     <div class="form-field">
                         <label>Nome Completo</label>
-                        <input type="text" id="name" value="{{$usuario['nome'] ?? ''}}">
+                        <input type="text" name="usuario" value="{{$usuario['nome'] ?? ''}}">
                     </div>
                     <div class="form-field">
                         <label>E-mail </label>
-                        <input type="email" id="email" disabled value="{{$usuario['email'] ?? ''}}">
+                        <input type="email" name="email" disabled value="{{$usuario['email'] ?? ''}}">
                     </div>
                 </div>
                 <div class="form-group">
