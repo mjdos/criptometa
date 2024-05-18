@@ -8,11 +8,15 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\StoreUserRequest;
+use Illuminate\Support\Facades\Hash;
+
 
 class SiteController extends Controller
 {
     public function index()
     {
+        dd('D');
         return view('site.home');
     }
 
@@ -75,12 +79,14 @@ class SiteController extends Controller
         return view('site.usuario.index');
     }
 
-    public function cadastroStore(Request $request)
+    public function cadastroStore(StoreUserRequest  $request)
     {
-
+        try {
+        // Criar uma nova carteira usando o ApiLumxController
         $lumx = new ApiLumxController;
         $nova_carteira = $lumx->criarCarteira();
 
+        // Criar o novo usuário com os dados validados
         User::create([
             'name'          => $request->usuario,
             'perfil'        => 2,
@@ -88,11 +94,15 @@ class SiteController extends Controller
             'carteira_id'   => $nova_carteira['id'],
             'projeto_id'    => $nova_carteira['projectId'],
             'email'         => $request->email,
-            'password'      => bcrypt($request->senha),
-
+            'password'      => Hash::make($request->senha),
         ]);
 
-        return view('site.login');
+        // Armazenar mensagem de sucesso na sessão
+        return redirect()->route('site.login')->with('success', 'Usuário cadastrado com sucesso!');
+    } catch (\Exception $e) {
+        // Armazenar mensagem de erro na sessão
+        return redirect()->back()->with('error', 'Ocorreu um erro ao cadastrar o usuário. Por favor, tente novamente.');
+    }
     }
 
     public function projetoIndex($id)
