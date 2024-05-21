@@ -22,7 +22,8 @@ class LoginController extends Controller
         
         $credentials = [
             'email' => $request->usuario,
-            'password' => $request->senha
+            'password' => $request->senha,
+            
         ];
             
         if(Auth::attempt($credentials))
@@ -34,6 +35,7 @@ class LoginController extends Controller
                 'id'            => $user->id,
                 'nome'          => $user->name,
                 'email'         => $user->email,
+             
             ];
             
             Session::put(['usuario' => $usuario_logado]);
@@ -54,6 +56,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->route('site.home');
     }
 }

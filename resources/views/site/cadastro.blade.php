@@ -37,14 +37,7 @@
                 <label class="tk-lp-label">Confirme a Senha</label>
                 <input class="tk-lp-input" name="confirme_senha" type="password">
             </div>
-            <div class="tk-lp-form-item">
-                <div class="tk-lp-check">
-                    <label class="tk-lp-checkbox">
-                        <input type="checkbox" name="gdpr" value="1">
-                        <span class="tk-lp-control-indicator"></span>
-                    </label>
-                </div>
-            </div>
+           <br>
             <button type="submit" class="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full">Registrar </button>
             <a type="button" href="{{route('site.login')}}" class="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item" data-id="sign-in">Eu já tenho conta!</a>
     </div>

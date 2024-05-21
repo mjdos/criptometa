@@ -17,7 +17,9 @@
             </div>
             <div class="bc-image"><img src="img/home.png" alt=""></div>
         </div><br>
+        
         <hr size="1"><br>
+
         <div class="become-creator-bc-box container-1300">
             <div class="bc-image"><img src="img/home2.png" alt=""></div>
             <div class="bc-info" style="padding:0px !important">

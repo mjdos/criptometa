@@ -11,10 +11,21 @@
             {{ session('success') }}
         </div>
         @endif
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li><div class="stat-number red">{{ $error }}</div></li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        
         <form action="{{ route('site.logar')}}" method="post" class="tk-lp-form user-register-kit-sign tk-lp-tabs-form-content active">
             @csrf
             <div class="tk-lp-form-item">
-                <label class="tk-lp-label">Usuário</label>
+                <label class="tk-lp-label">E-mail</label>
                 <input class="tk-lp-input" name="usuario" type="text">
             </div>
             <div class="tk-lp-form-item">

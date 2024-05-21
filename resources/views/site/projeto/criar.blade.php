@@ -2,7 +2,8 @@
 <!-- main content area -->
 <br>
 <br><br>
-<div class="container">
+<div class="primary-content-area container content-padding grid-left-sidebar">
+    @include('site.usuario.menu')
     <div class="main-content-area">
         <div class="page-title-section">
             <h2> Criar <span class="gradient-text">Projeto</span></h2>
@@ -16,6 +17,16 @@
                 <div class="form-field">
                     <label for="item-name">Nome</label>
                     <input type="text" name="nome">
+                </div>
+                <div class="form-field">                        
+                    <label for="item-name">Categoria</label>
+                    <select id="categoria">
+                        <option value="" selected disabled>Selecione categorias de seu projeto </option>
+                        
+                            @foreach($categorias as $categoria)
+                            <option value="{{$categoria->id}}">{{$categoria->name}}</option>
+                            @endforeach
+                    </select>
                 </div>
                 <div class="form-field">                        
                     <div class="upload-container">
@@ -67,8 +78,9 @@
             </div>
         </form>
     </div>
+
 </div>
-</div>
+
 
 
 <!-- main content area -->

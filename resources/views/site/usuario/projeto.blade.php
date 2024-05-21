@@ -3,6 +3,7 @@
 $usuario = Session::get('usuario');
 @endphp
 <!-- main content area -->
+
 <div class="primary-content-area container content-padding grid-left-sidebar">
     @include('site.usuario.menu')
     <div class="main-content-area">

@@ -7,7 +7,9 @@ require __DIR__.'/lumx.php';
 require __DIR__.'/painel.php';
 
     //pagina inicial
-    Route::get('/', [SiteController::class,'index'])->name('site.index');
+    Route::get('/', [SiteController::class,'index'])->name('site.index'); //index não estã funcionando  criado a abaixo para teste.
+    Route::get('/index', [SiteController::class, 'home'])->name('site.home');
+
 
     //pagina login
     Route::get('/login', [SiteController::class,'login'])->name('site.login');

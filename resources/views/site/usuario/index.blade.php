@@ -1,7 +1,9 @@
 @include('site.layouts.header')
 @php
-    $usuario = Session::get('usuario');
+$usuario = Session::get('usuario');
+
 @endphp
+
 <!-- main content area -->
 <div class="primary-content-area container content-padding grid-left-sidebar">
     @include('site.usuario.menu')
@@ -12,35 +14,71 @@
             </h2>
         </div>
         <div class="user-db-content-area">
-            <form action="{{route('cadastro.update')}}" method="post" class="cryptoki-form" id="personal-info-form">
+            <form action="#" method="post" class="cryptoki-form" id="personal-info-form">
                 @csrf
                 <div class="form-group">
+
                     <div class="form-field">
-                        <label>Nome Completo</label>
-                        <input type="text" name="usuario" value="{{$usuario['nome'] ?? ''}}">
+                        <div class="license-type">Nome Completo</div>
+                        <label class="label">
+                            <font size='5'>{{$usuario['nome'] ?? ''}}</font>
+                        </label>
                     </div>
+
                     <div class="form-field">
-                        <label>E-mail </label>
-                        <input type="email" name="email" disabled value="{{$usuario['email'] ?? ''}}">
+                        <div class="license-type">E-mail</div>
+                        <label class="label">
+                            <font size='5'>{{$usuario['email'] ?? ''}}</font>
+                        </label>
                     </div>
                 </div>
+
                 <div class="form-group">
+
                     <div class="form-field">
-                        <label>Telefone para contato</label>
-                        <input type="number" name="telefone" value="">
+                        <div class="license-type">Telefone Principal</div>
+                        <div class="number">
+                            <font size='5'>{{$usuario['telefone'] ?? '(xx)xxxxx-xxxx'}}</font>
+                        </div>
                     </div>
+
+                    <div class="form-field">
+                        <div class="license-type">Telefone Recados</div>
+                        <div class="number">
+                            <font size='5'>{{$usuario['telefone'] ?? '(xx)xxxxx-xxxx'}}</font>
+                        </div>
+                    </div>
+                </div><br>
+                <hr>
+                <div class="payment-history">
+                    <h5>Endereço</h5>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="heading-label">Estado</th></th>
+                                <th scope="col" class="heading-label">Cidade</th>
+                                <th scope="col" class="heading-label">Endereço</th>
+                                <th scope="col" class="heading-label">Casa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Date">
+                                    <div class="date"></div>
+                                </td>
+                                <td data-label="Method">
+                                    <div class="item-title">
+                                    </div>
+                                </td>
+                                <td data-label="Amount" class="stat-value"></td>
+                                <td data-label="price" class="stat-value"></td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
                 </div>
-                <div class="form-group">
-                    <div class="form-field">
-                        <label>Trocar Senha</label>
-                        <input type="password" name="senha" id="password-1">
-                    </div>
-                    <div class="form-field">
-                        <label>Repetir Senha</label>
-                        <input type="password" name="repita_senha" id="password-2">
-                    </div>
-                </div>
-                <button class="btn btn-wide btn-dark">Salvar</button>
+   
+                <button class="btn btn-wide btn-dark">Atualizar Cadastro</button>
             </form>
         </div>
 

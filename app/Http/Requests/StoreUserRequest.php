@@ -16,7 +16,7 @@ class StoreUserRequest extends FormRequest
         return [
             'usuario' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'senha' => 'required|string|min:8',
+            'senha' => 'required|string|min:4',
         ];
     }
 
@@ -28,7 +28,7 @@ class StoreUserRequest extends FormRequest
             'email.email' => 'O e-mail deve ser um endereço de e-mail válido.',
             'email.unique' => 'Este e-mail já está registrado.',
             'senha.required' => 'A senha é obrigatória.',
-            'senha.min' => 'A senha deve ter pelo menos 8 caracteres.',
+            'senha.min' => 'A senha deve ter pelo menos 4 caracteres.',
         ];
     }
 }
