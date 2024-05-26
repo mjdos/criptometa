@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/lumx.php';
@@ -57,7 +58,12 @@ require __DIR__.'/painel.php';
 
     ///// TELAS DO USUÁRIO
     // Tela Perfil do Usuário
-    Route::get('/usuario-index', function () {return view('site.usuario.index');})->name('usuario.index');
+    //Route::get('/usuario-index', function () {return view('site.usuario.index');})->name('usuario.index');
+    Route::get('/profile-index', [ProfileController::class, 'index'])->name('usuario.index')->middleware('auth');
+    Route::get('/profile-edit-{id}', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
+    Route::post('/profile-update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+
+
 
     //Tela Carteira do Usuário
     Route::get('/usuario-carteira', function () {return view('site.usuario.carteira');})->name('usuario.carteira');
