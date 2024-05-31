@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserAddressController;
 use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/lumx.php';
@@ -59,9 +60,20 @@ require __DIR__.'/painel.php';
     ///// TELAS DO USUÁRIO
     // Tela Perfil do Usuário
     //Route::get('/usuario-index', function () {return view('site.usuario.index');})->name('usuario.index');
-    Route::get('/profile-index', [ProfileController::class, 'index'])->name('usuario.index')->middleware('auth');
-    Route::get('/profile-edit-{id}', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
-    Route::post('/profile-update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+
+Route::middleware('auth')->group(function () {
+      Route::get('/profile-index', [ProfileController::class, 'index'])->name('usuario.index');
+      Route::get('/profile-edit-{id}', [ProfileController::class, 'edit'])->name('profile.edit');
+      Route::post('/profile-update', [ProfileController::class, 'update'])->name('profile.update');
+
+      Route::get('user-address-index', [UserAddressController::class, 'index'])->name('usuario_endereco.index');
+      Route::get('user-address-create-{id}', [UserAddressController::class, 'create'])->name('usuario_endereco.create');
+      Route::post('user-address-store', [UserAddressController::class, 'store'])->name('usuario_endereco.store');
+      Route::get('user-address/{address}/edit', [UserAddressController::class, 'edit'])->name('usuario_endereco.edit');
+      Route::put('user-address/{address}', [UserAddressController::class, 'update'])->name('usuario_endereco.update');
+      Route::delete('user-address/{address}', [UserAddressController::class, 'destroy'])->name('usuario_endereco.destroy');
+});
+
 
 
 

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
              UsersTableSeeder::class,
              ProjetoSeeder::class,
              ProjectCategoriesTableSeeder::class,
+             EstadoTableSeeder::class,
         ]);
     }
 }

@@ -20,6 +20,9 @@
                 <li><a href="{{route('usuario.index')}}"><svg class="crumina-icon">
                             <use xlink:href="#user-icon"></use>
                         </svg>Perfil</a></li>
+                <li><a href="{{route('usuario_endereco.index')}}"><svg class="crumina-icon">
+                    <use xlink:href="#slide-filter-icon"></use>
+                </svg>Endereço</a></li>
                 <li><a href="{{route('projeto.criar')}}"><svg class="crumina-icon">
                             <use xlink:href="#picture-icon"></use>
                         </svg>Criar Projeto</a></li>
@@ -39,4 +42,4 @@
             </ul>
         </div>
     </div>
-</aside>
+</aside>    
