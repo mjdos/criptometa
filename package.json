@@ -11,6 +11,6 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
-        "inputmask": "^5.0.8"
+        "inputmask": "^5.0.9"
     }
 }

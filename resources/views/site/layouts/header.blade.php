@@ -16,20 +16,22 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url('img/favicon02.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url('img/favicon02.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/favicon02.png') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7/jquery.inputmask.min.js"></script>
 
-    
+
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/swiper-bundle.css">
     <link rel="stylesheet" href="css/nice-select2.css">
     <link rel="stylesheet" href="css/login-register.css">
-    <link rel="stylesheet" href="css/meucss.css">
     <meta name="theme-color" content="#fafafa">
 
 <body class="loading">
     @php
-        $usuario = Session::get('usuario');
+    $usuario = Session::get('usuario');
     @endphp
     <div class="main digital-store">
         <!-- mobile navigation panel -->
@@ -45,9 +47,9 @@
                 <!-- mobile menu -->
                 <ul class="mobile-menu">
                     <li class="menu-item"><a class="menu-link" href="{{route('site.index')}}">Inicial</a></li>
-                        <ul class="submenu">
-                            <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
-                        </ul>
+                    <ul class="submenu">
+                        <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
+                    </ul>
                     </li>
                 </ul>
                 <!-- mobile menu -->
@@ -79,9 +81,9 @@
                         <li class="menu-item menu-item-has-children"><a class="menu-link" href="{{route('quemsomos')}}">Quem Somos</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
                         @if(isset($usuario))
-                            <li class="menu-item"><a class="menu-link" href="{{route('projeto.criar')}}">Criar Projeto</a></li>
+                        <li class="menu-item"><a class="menu-link" href="{{route('projeto.criar')}}">Criar Projeto</a></li>
                         @else
-                            <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Criar Projeto</a></li>
+                        <li class="menu-item"><a class="menu-link" href="{{route('site.login')}}">Criar Projeto</a></li>
                         @endif
                         <li class="menu-item"><a class="menu-link" href="{{route('contato')}}">Contato</a></li>
                     </ul>
@@ -102,7 +104,7 @@
                         <div class="avatar box-42">
                             <img src="img/avatar.png" alt="avatar">
                         </div>
-                       
+
                         <div id="profile-dropdown" class="cryptoki-notif-target">
                             <div class="profile-dropdown-header profile-cover-image"></div>
                             <div class="profile-dropdown-body">
@@ -116,10 +118,10 @@
                                                 <use xlink:href="#user-icon"></use>
                                             </svg>Perfil</a></li>
                                     <li><a href="{{route('projeto.criar')}}"><svg class="crumina-icon">
-                                        <use xlink:href="#picture-icon"></use>
-                                    </svg>Criar Projeto</a></li>
+                                                <use xlink:href="#picture-icon"></use>
+                                            </svg>Criar Projeto</a></li>
                                     <li><a href="{{  route('meus_projetos', $usuario['id'])}}"><svg class="crumina-icon">
-                                    <!-- <li><a href="{{route('usuario.projetos')}}"><svg class="crumina-icon"> -->
+                                                <!-- <li><a href="{{route('usuario.projetos')}}"><svg class="crumina-icon"> -->
                                                 <use xlink:href="#dashboard-icon"></use>
                                             </svg>Meus Projetos</a></li>
                                     <li><a href="{{  route('meus_investimentos', $usuario['id'])}}"><svg class="crumina-icon">
@@ -136,17 +138,17 @@
                         </div>
                     </div>
                     @else
-                        <div class="header-user-profile cryptoki-notif-bttn">
-                            <a class="btn btn-wide btn-dark" href="{{route('site.login')}}">Login</a>
-                        </div>
+                    <div class="header-user-profile cryptoki-notif-bttn">
+                        <a class="btn btn-wide btn-dark" href="{{route('site.login')}}">Login</a>
+                    </div>
                     @endif
 
                 </div>
             </div>
             <!-- header search block -->
             <div id="mobile-search-block">
-                <form  id="mobile-search-form">
-                    <input type="text" class="search-input"   placeholder="Enter your search here...">
+                <form id="mobile-search-form">
+                    <input type="text" class="search-input" placeholder="Enter your search here...">
                     <button class="search-button">
                         <svg class="crumina-icon">
                             <use xlink:href="#search-icon"></use>
@@ -156,4 +158,3 @@
             </div>
             <!-- header search block -->
         </nav>
-
