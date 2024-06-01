@@ -4,16 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\State;
 
-class State extends Model
+class City extends Model
 {
     use HasFactory;
 
-    protected $table = 'states';
-
     protected $fillable = [
         'name',
-        'abbreviation',
+        'estado_id',
     ];
+
+    public function estado()
+    {
+        return $this->belongsTo(State::class);
+    }
 }
-    

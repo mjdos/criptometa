@@ -67,11 +67,7 @@ Route::middleware('auth')->group(function () {
       Route::post('/profile-update', [ProfileController::class, 'update'])->name('profile.update');
 
       Route::get('user-address-index', [UserAddressController::class, 'index'])->name('usuario_endereco.index');
-      Route::get('user-address-create-{id}', [UserAddressController::class, 'create'])->name('usuario_endereco.create');
-      Route::post('user-address-store', [UserAddressController::class, 'store'])->name('usuario_endereco.store');
-      Route::get('user-address/{address}/edit', [UserAddressController::class, 'edit'])->name('usuario_endereco.edit');
-      Route::put('user-address/{address}', [UserAddressController::class, 'update'])->name('usuario_endereco.update');
-      Route::delete('user-address/{address}', [UserAddressController::class, 'destroy'])->name('usuario_endereco.destroy');
+      Route::any('user-address/{id}', [UserAddressController::class, 'update'])->name('endereco.update');
 });
 
 
