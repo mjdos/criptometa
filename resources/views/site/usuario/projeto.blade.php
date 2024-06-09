@@ -1,7 +1,4 @@
 @include('site.layouts.header')
-@php
-$usuario = Session::get('usuario');
-@endphp
 <!-- main content area -->
 
 <div class="primary-content-area container content-padding grid-left-sidebar">
@@ -12,63 +9,57 @@ $usuario = Session::get('usuario');
                 Meus <span class="gradient-text">Projetos</span>
             </h2>
         </div>
-        <div class="user-db-content-area">
-            <!--   items grid -->
-            <div class="featured-box manage-items">
-                <div class="featured-box-wrapper grid-4-columns">
-                    <div class="create-item">
-                        <div class="create-item-wrapper">
-                            <div class="create-item-content">
-                                <div class="create-item-image">
-                                    <svg class="crumina-icon">
-                                        <use xlink:href="#upload-icon"></use>
-                                    </svg>
-                                </div>
-                                <div class="create-item-info">
-                                    <div class="small-title">Crie um Projeto</div>
-                                    <div class="description">  <a href="{{route('projeto.criar')}}" class="btn btn-small-wide btn-dark"> Clique aqui para começa!</a></div>
-                                </div>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="heading-label">Projeto Detalhes</th>
+                    <th scope="col" class="heading-label">Data</th>
+                    <th scope="col" class="heading-label">Meta</th>
+                    <th scope="col" class="heading-label">Valor Arrecadado</th>
+                    <th scope="col" class="heading-label">Alguma Coisa</th>
+                    <th scope="col" class="heading-label"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($projetos as $projeto)
+                <tr>
+                    <td data-label="Item details">
+                        <div class="product-info">
+                            <div class="product-thumb"><a href="05-product.html">
+                                    <img src="@if($projeto->imagem != null) {{ asset('storage/imagens/' . $projeto->imagem) }}  @else img/content/previews/project-thumb-37.png @endif" alt=""></a>
                             </div>
-                            <div class="create-item-post-content">
-                            </div>
-                        </div>
-                    </div>
-
-                    @foreach($projetos as $projeto)
-                    <div class="featured-item v5">
-                        <div class="featured-item-wrapper">
-                            <div class="featured-item-content">
-                                <div class="featured-item-image">
-                                    <a href="{{ route('projeto.index', $projeto->id) }}">
-                                        <img src="@if(isset($projeto->imagem))
-                                        {{$projeto->imagem }}" alt=""></a>
-                                        @else
-                                        ?? img/content/items/featured-item-29.png
-                                        @endif
-                                </div>
-                                <div class="featured-item-info">
-                                    
-                                    <div class="title">
-                                        <a href="{{ route('projeto.index', $projeto->id) }}">{{$projeto->nome}}</a>
+                            <div class="product-details">
+                                <div class="product-name"><a href="05-product.html">{{$projeto->titulo}}</a></div>
+                                <div class="product-meta">
+                                    <div class="item-category ui-templates">UI TEMPLATES</div>
+                                    <div class="product-seller">
+                                        {{$projeto->user->name}}<span class="verified"><svg class="crumina-icon">
+                                                <use xlink:href="#check-icon"></use>
+                                            </svg></span>
                                     </div>
-                                    <div class="item-meta"><span class="avatar box-26"><a href="/cryptoki-html/"><img src="img/avatar.png" alt=""></a><span class="verified">
-                                                </span></span>{{$projeto->autor->name}}</div>
                                 </div>
                             </div>
-                            <div class="featured-item-post-content">
-                                
-                                <div class="item-price">${{$projeto->carteira}}</div>
-                            </div>
                         </div>
-                    </div>
+                    </td>
+                    <td data-label="Date"> {{ $projeto->created_at->format('d/m/Y') }}</td>
+                    <td data-label="License">Regular</td>
+                    <td data-label="Price" class="price">${{ $projeto->meta }}</td>
 
-                    @endforeach
+                    <td data-label="Rating">
+                        <button data-modal="review-modal1" class="item-rating">
+                            @for($i = 0; $i < $projeto->id; $i++)
+                                <span class="filled"><svg class="crumina-icon">
+                                        <use xlink:href="#star2-icon"></use>
+                                    </svg></span>
+                                @endfor
 
-                </div>
-            </div>
 
-        </div>
-
+                        </button>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 
 </div>

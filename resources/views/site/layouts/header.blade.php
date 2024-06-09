@@ -18,7 +18,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/favicon02.png') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7/jquery.inputmask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
 
+    <link href="{{ url ('assets/css/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 
 
     <link rel="stylesheet" href="css/normalize.css">
@@ -37,7 +40,7 @@
         <!-- mobile navigation panel -->
         <div class="mobile-nav-panel">
             <div class="mobile-nav-header">
-                <div class="mobile-menu-logo logo"><a href="{{route('site.index')}}"><img src="svg/logo-ds.svg" alt="logo"></a>
+                <div class="mobile-menu-logo logo"><a href="{{route('site.home')}}"><img src="svg/logo-ds.svg" alt="logo"></a>
                 </div>
                 <svg class="crumina-icon close-icon">
                     <use xlink:href="#cross-icon"></use>
@@ -46,7 +49,7 @@
             <div class="mobile-menu-wrapper">
                 <!-- mobile menu -->
                 <ul class="mobile-menu">
-                    <li class="menu-item"><a class="menu-link" href="{{route('site.index')}}">Inicial</a></li>
+                    <li class="menu-item"><a class="menu-link" href="{{route('site.home')}}">Inicial</a></li>
                     <ul class="submenu">
                         <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
                     </ul>
@@ -69,7 +72,7 @@
                     <!-- mobile panel burger icon -->
                     <!-- header logo -->
                     <div class="logo">
-                        <a class="logo-link" href="{{ route('site.index') }}">
+                        <a class="logo-link" href="{{ route('site.home') }}">
                             <div class="logo-img"><img src="{{ url('img/logo.png') }}" alt="logo"></div>
                             <div class="logo-text">CriptoMeta</div>
                         </a>
@@ -77,7 +80,7 @@
                     <!-- header logo -->
                     <!--  navigation menu -->
                     <ul class="navigation-menu">
-                        <li class="menu-item"><a class="menu-link" href="{{route('site.index')}}">Inicial</a></li>
+                        <li class="menu-item"><a class="menu-link" href="{{route('site.home')}}">Inicial</a></li>
                         <li class="menu-item menu-item-has-children"><a class="menu-link" href="{{route('quemsomos')}}">Quem Somos</a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('projeto.explorar')}}">Projetos</a></li>
                         @if(isset($usuario))
@@ -158,3 +161,4 @@
             </div>
             <!-- header search block -->
         </nav>
+

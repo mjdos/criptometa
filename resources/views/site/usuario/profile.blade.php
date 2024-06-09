@@ -10,20 +10,21 @@
             <div class="user-db-content-area">
                 @if (session('status'))
                 <div class="stat-number green">
-                    {{ session('status') }}
+                    
                 </div>
-
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                    position: 'top',
+                    title: 'Sucesso!',
+                    text: '{{ session('status') }}',
+                    icon: 'success',
+                    showConfirmButton: true
+                });
+                    });
+                </script>
                 @endif
-
-                @endif
+        
                 <form class="cryptoki-form" id="personal-info-form" method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="user-db-title">Informações Pessoais</div>

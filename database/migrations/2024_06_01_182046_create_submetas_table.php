@@ -11,18 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('investimentos', function (Blueprint $table) {
+        Schema::create('submetas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('investidor_id')->unsigned();
-            $table->foreign('investidor_id')
-                ->references('id')
-                ->on('users');
-            $table->integer('projeto_id')->unsigned();
+            $table->unsignedInteger('projeto_id');
             $table->foreign('projeto_id')
                 ->references('id')
-                ->on('projects');
-            $table->integer('valor')->unsigned();
-            $table->string('hash_transacao')->nullable();
+                ->on('projetos')
+                ->onDelete('cascade');
+            $table->string('nome');
+            $table->decimal('percentual', 5, 2); // Percentual da submeta
+            $table->decimal('valor', 15, 2); // Valor da submeta
+            $table->decimal('fundos_arrecadados', 15, 2)->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('investimentos');
+        Schema::dropIfExists('submetas');
     }
 };

@@ -77,7 +77,7 @@ class ProfileController extends Controller
                 // Atualiza o caminho da foto do usuário no banco de dados
                 $usuario->photo = $photoPath;
             }
-
+           
             $usuario->save();
 
             return redirect()->route('usuario.index')->with('status', 'Perfil atualizado com sucesso!');

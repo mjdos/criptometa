@@ -3,6 +3,7 @@
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserAddressController;
+use App\Http\Controllers\ProjetoController;
 use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/lumx.php';
@@ -23,10 +24,12 @@ require __DIR__.'/painel.php';
     Route::post('/cadastroEditar', [SiteController::class,'updateCadastro'])->name('cadastro.update');
 
     // projeto
-    Route::get('/projeto-index-{id}', [SiteController::class, 'projetoIndex'])->name('projeto.index');
+    Route::get('/projeto-index-{id}', [SiteController::class, 'projetoIndex'])->name('projeto.index2');
     //criar
-    Route::get('/projeto-criar', [SiteController::class, 'projetoCriar'])->name('projeto.criar');
-    Route::post('/projeto-criar', [SiteController::class, 'projetoStore'])->name('projeto.store');
+    Route::get('/projeto-criar', [ProjetoController::class, 'create'])->name('projeto.criar');
+    Route::post('/projeto-store', [ProjetoController::class, 'store'])->name('projeto.store');
+    Route::get('/projetos-listar', [ProjetoController::class, 'index'])->name('projeto.index');
+
 
     //adicionar explorar
     Route::get('/projeto-explorar', [SiteController::class, 'projetos'])->name('projeto.explorar');

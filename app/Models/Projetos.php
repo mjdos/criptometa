@@ -9,7 +9,7 @@ class Projetos extends Model
 {
     use HasFactory;
 
-    protected $table = 'projetos';
+    protected $table = 'projects';
 
     protected $fillable = [
         'autor_id',

@@ -4,7 +4,7 @@
             <div class="user-header-user-profile">
                 <div class="avatar box-64">
                     <a href="{{route('usuario.index')}}">
-                        @if ($usuario->photo)
+                        @if ($usuario->photo) 
                         <img src="{{ asset('storage/' . $usuario->photo) }}" alt="Foto do Perfil"> @else <img src="img/avatar.png" alt="avatar">
                         @endif
 
@@ -39,7 +39,7 @@
                 <li><a href="{{route('projeto.criar')}}"><svg class="crumina-icon">
                             <use xlink:href="#picture-icon"></use>
                         </svg>Criar Projeto</a></li>
-                <li><a href="{{route('usuario.projetos')}}"><svg class="crumina-icon">
+                <li><a href="{{route('projeto.index')}}"><svg class="crumina-icon">
                             <use xlink:href="#dashboard-icon"></use>
                         </svg>Meus Projetos</a></li>
                 <li><a href="#"><svg class="crumina-icon">
