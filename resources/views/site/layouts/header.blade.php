@@ -105,7 +105,7 @@
                             <!-- <div class="user_score">ETH $291.36</div> -->
                         </div>
                         <div class="avatar box-42">
-                            <img src="img/avatar.png" alt="avatar">
+                            <img src="{{ asset('storage/' .$usuario['photo']) ?? url('img/logo.png')}}" alt="avatar">
                         </div>
 
                         <div id="profile-dropdown" class="cryptoki-notif-target">
@@ -113,7 +113,7 @@
                             <div class="profile-dropdown-body">
                                 <div class="profile-heading">
                                     <div class="profile-avatar avatar box-26">
-                                        <img src="img/avatar.png" alt="avatar">
+                                        <img src="{{ asset('storage/' .$usuario['photo']) ?? url('img/logo.png')}}" alt="avatar">
                                     </div>
                                 </div>
                                 <ul class="profile-menu">

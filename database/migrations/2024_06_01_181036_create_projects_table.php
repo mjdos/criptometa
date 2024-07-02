@@ -18,7 +18,7 @@ return new class extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->string('imagem')->nullable()->after('user_id');
+            $table->string('imagem')->nullable();
             $table->string('titulo');
             $table->text('descricao');
             $table->decimal('meta', 15, 2);

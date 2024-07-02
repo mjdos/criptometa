@@ -29,6 +29,8 @@ require __DIR__.'/painel.php';
     Route::get('/projeto-criar', [ProjetoController::class, 'create'])->name('projeto.criar');
     Route::post('/projeto-store', [ProjetoController::class, 'store'])->name('projeto.store');
     Route::get('/projetos-listar', [ProjetoController::class, 'index'])->name('projeto.index');
+    Route::get('/projeto-{id}-editar', [ProjetoController::class, 'edit'])->name('projeto.editar');
+    Route::put('/projeto-{id}', [ProjetoController::class, 'update'])->name('projeto.update');
 
 
     //adicionar explorar

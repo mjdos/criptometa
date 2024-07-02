@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ProfileController extends Controller
 {
@@ -79,6 +80,14 @@ class ProfileController extends Controller
             }
            
             $usuario->save();
+            Session::put('usuario', [
+                'id' => $usuario->id,
+                'name' => $usuario->name,
+                'email' => $usuario->email,
+                'telefone' => $usuario->telefone,
+                'cpf' => $usuario->cpf,
+                'photo' => $usuario->photo,
+            ]);
 
             return redirect()->route('usuario.index')->with('status', 'Perfil atualizado com sucesso!');
         } catch (\Exception $e) {

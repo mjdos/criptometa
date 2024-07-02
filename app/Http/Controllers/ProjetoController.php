@@ -15,8 +15,8 @@ class ProjetoController extends Controller
     {
         $user = Auth::user(); // Obtém o usuário autenticado
         $usuario = User::find($user->id);
-        $projetos = Project::where('user_id', $usuario->id)->with('submetas')->orderBy('id','desc')->get();
-        
+        $projetos = Project::where('user_id', $usuario->id)->with('submetas')->orderBy('id', 'desc')->get();
+
         return view('site.usuario.projeto', compact('usuario', 'projetos'));
     }
 
@@ -51,7 +51,7 @@ class ProjetoController extends Controller
 
         if ($request->hasFile('imagem')) {
             $imagem = $request->file('imagem');
-            $nomeImagem = time().'_'.$imagem->getClientOriginalName();
+            $nomeImagem = time() . '_' . $imagem->getClientOriginalName();
             $imagem->storeAs('public/imagens', $nomeImagem);
             $projetoData['imagem'] = $nomeImagem;
         }
@@ -66,5 +66,57 @@ class ProjetoController extends Controller
         }
 
         return redirect()->route('projeto.criar')->with('success', 'Projeto criado com sucesso!');
+    }
+
+    public function edit($id)
+    {
+        $projeto = Project::with('submetas')->findOrFail($id);
+        $user = Auth::user(); // Obtém o usuário autenticado
+        $usuario = User::find($user->id);
+        return view('site.usuario.projeto_edit', compact('projeto','usuario'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'titulo' => 'required|string|max:255',
+            'descricao' => 'required|string',
+            'meta' => 'required|numeric|min:0',
+            'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'submetas' => 'required|array',
+            'submetas.*.nome' => 'required|string|max:255',
+            'submetas.*.percentual' => 'required|numeric|min:0|max:100',
+            'submetas.*.valor' => 'required|numeric|min:0',
+        ]);
+
+        $projeto = Project::findOrFail($id);
+
+        $projeto->update([
+            'titulo' => $request->input('titulo'),
+            'descricao' => $request->input('descricao'),
+            'meta' => $request->input('meta'),
+            'user_id' => Auth::id(),
+        ]);
+
+        if ($request->hasFile('imagem')) {
+            $imagem = $request->file('imagem');
+            $nomeImagem = time() . '_' . $imagem->getClientOriginalName();
+            $imagem->storeAs('public/imagens', $nomeImagem);
+            $projeto->update(['imagem' => $nomeImagem]);
+        }
+
+        // Atualiza ou cria novas submetas
+        foreach ($request->input('submetas', []) as $submetaData) {
+            $projeto->submetas()->updateOrCreate(
+                ['id' => $submetaData['id'] ?? null],
+                [
+                    'nome' => $submetaData['nome'],
+                    'percentual' => $submetaData['percentual'],
+                    'valor' => $submetaData['valor'],
+                ]
+            );
+        }
+
+        return redirect()->route('site.usuario.projeto_edit', $projeto->id)->with('success', 'Projeto atualizado com sucesso!');
     }
 }

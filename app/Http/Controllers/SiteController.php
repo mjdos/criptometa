@@ -81,7 +81,8 @@ class SiteController extends Controller
                 'carteira' => $user->carteira,
                 'carteira_id' => $user->carteira_id,
                 'projeto_id' => $user->projeto_id,
-                'telefone' => $user->telefone
+                'telefone' => $user->telefone,
+                'photo' => $user->photo ? $user->photo : url('img/logo.png'), // Atualiza a foto na sessão
             ];
 
             // Armazenar dados do usuário na sessão

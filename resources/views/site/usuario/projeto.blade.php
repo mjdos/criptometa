@@ -55,6 +55,9 @@
 
 
                         </button>
+                        <td>
+                            <a href="{{route('projeto.editar',$projeto->id)}}">acessar</a>
+                        </td>
                     </td>
                 </tr>
                 @endforeach

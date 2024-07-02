@@ -27,15 +27,18 @@ class LoginController extends Controller
         ];
             
         if(Auth::attempt($credentials))
+       
         {
 
             $user = Auth::user();
-
+            if ($user->photo == null ){
+                $teste =  'img/content/previews/project-thumb-37.png';
+            }
             $usuario_logado = [
                 'id'            => $user->id,
                 'nome'          => $user->name,
                 'email'         => $user->email,
-             
+                'photo'         => $teste,
             ];
             
             Session::put(['usuario' => $usuario_logado]);
