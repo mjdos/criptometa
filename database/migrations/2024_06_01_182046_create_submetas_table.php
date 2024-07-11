@@ -20,7 +20,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->string('nome');
             $table->decimal('percentual', 5, 2); // Percentual da submeta
-            $table->decimal('valor', 15, 2); // Valor da submeta
+            $table->string('descricao'); // Valor da submeta
             $table->decimal('fundos_arrecadados', 15, 2)->default(0);
             $table->timestamps();
         });

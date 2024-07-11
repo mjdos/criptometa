@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
-use App\Models\Submeta;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProjetoValidator;
 
 class ProjetoController extends Controller
 {
@@ -29,19 +29,8 @@ class ProjetoController extends Controller
         return view('site.usuario.projeto_create', compact('usuario'));
     }
 
-    public function store(Request $request)
+    public function store(ProjetoValidator $request)
     {
-        $request->validate([
-            'titulo' => 'required|string|max:255',
-            'descricao' => 'required|string',
-            'meta' => 'required|numeric|min:0',
-            'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'submetas' => 'required|array',
-            'submetas.*.nome' => 'required|string|max:255',
-            'submetas.*.percentual' => 'required|numeric|min:0|max:100',
-            'submetas.*.valor' => 'required|numeric|min:0',
-        ]);
-
         $projetoData = [
             'titulo' => $request->input('titulo'),
             'descricao' => $request->input('descricao'),
@@ -58,14 +47,7 @@ class ProjetoController extends Controller
 
         $projeto = Project::create($projetoData);
 
-        $submetas = $request->input('submetas', []);
-
-        foreach ($submetas as $submetaData) {
-            $submetaData['projeto_id'] = $projeto->id;
-            Submeta::create($submetaData);
-        }
-
-        return redirect()->route('projeto.criar')->with('success', 'Projeto criado com sucesso!');
+        return redirect()->route('sub_meta.create',['projetoId' => $projeto->id])->with('success', 'Projeto criado com sucesso!');
     }
 
     public function edit($id)
@@ -73,7 +55,7 @@ class ProjetoController extends Controller
         $projeto = Project::with('submetas')->findOrFail($id);
         $user = Auth::user(); // Obtém o usuário autenticado
         $usuario = User::find($user->id);
-        return view('site.usuario.projeto_edit', compact('projeto','usuario'));
+        return view('site.usuario.projeto_edit', compact('projeto', 'usuario'));
     }
 
     public function update(Request $request, $id)

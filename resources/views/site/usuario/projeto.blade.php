@@ -56,7 +56,7 @@
 
                         </button>
                         <td>
-                            <a href="{{route('projeto.editar',$projeto->id)}}">acessar</a>
+                            <a href="{{route('projeto.editar',$projeto->id)}}">Editar</a>
                         </td>
                     </td>
                 </tr>

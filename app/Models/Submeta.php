@@ -15,7 +15,7 @@ class Submeta extends Model
         'projeto_id', 
         'nome', 
         'percentual', 
-        'valor', 
+        'descricao', 
         'fundos_arrecadados'
     ];
 
