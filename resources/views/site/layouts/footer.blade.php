@@ -86,7 +86,7 @@
         <script defer src="js/waves.min.js"></script>
         <script async src="js/svg-loader.js"></script>
         <script defer src="js/nice-select2.js"></script>
-
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         </body>
 
         </html>

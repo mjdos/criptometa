@@ -66,5 +66,6 @@
 </div>
 
 </div>
+
 <!-- main content area -->
 @include('site.layouts.footer')

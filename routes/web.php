@@ -74,7 +74,7 @@ Route::get('/projeto_usuario-{id}', [SiteController::class, 'projeto_usuario'])-
 
 Route::get('/projeto-{projetoId}-meta-extra-create', [SubMetaController::class, 'create'])->name('sub_meta.create');
 Route::post('/projeto-meta-extra', [SubMetaController::class, 'store'])->name('sub_meta.store');
-
+Route::delete('/submeta/{id}', [SubmetaController::class, 'destroy'])->name('sub_meta.destroy');
 ///// TELAS DO USUÁRIO
 // Tela Perfil do Usuário
 //Route::get('/usuario-index', function () {return view('site.usuario.index');})->name('usuario.index');

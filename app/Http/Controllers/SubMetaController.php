@@ -7,7 +7,9 @@ use App\Http\Requests\SubMetaValidator;
 use App\Models\Project;
 use App\Models\Submeta;
 use App\Models\User;
+use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\JsonResponse;
 
 class SubMetaController extends Controller
 {
@@ -20,16 +22,35 @@ class SubMetaController extends Controller
         return view('site.submeta.create', compact('projetoId', 'usuario', 'projeto','submetas'));
     }
 
-    public function store(Request $request)
+    public function store(SubMetaValidator $request)
     {
-        $validatedData = $request->validate([
-            'nome' => 'required|string|max:255',
-            'descricao' => 'required|string',
-            'percentual' => 'required|numeric|min:0|max:100',
-            'projeto_id' => 'required|exists:projects,id',
-        ]);
+        $validatedData = $request->validated();
         Submeta::create($validatedData);
         return redirect()->route('sub_meta.create', $request->projeto_id)
             ->with('success2', 'Meta extra adicionada com sucesso!');
+    }
+    public function destroy($id, Request $request)
+    {
+        try {
+            $submeta = Submeta::find($id);
+
+            if ($submeta) {
+                $submeta->delete();
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Meta extra deletada com sucesso!'
+                ]);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Meta extra não encontrada.'
+                ]);
+            }
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Ocorreu um erro ao tentar deletar a meta extra.'
+            ]);
+        }
     }
 }
